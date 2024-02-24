@@ -1,0 +1,42 @@
+---
+
+const { title } = Astro.props
+
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{ title }</title>
+	</head>
+	<body>
+		
+		<header class='bg-gradient-to-b from-indigo-700 to-violet-700'>
+			<div class='mx-auto lg:flex lg:h-screen lg:items-start'>
+			  <div class='w-full'>
+				<ul class='flex p-4 mt-4 justify-around text-lg'>
+				  	<li>
+						<a   href="#About" class='text-white hover:text-orange-400 p-4 mt-4 justify-around text-lg'>About</a>
+					</li>
+					<li>
+						<a  href="#work" class='text-white hover:text-orange-400'>My Work</a>
+				  	</li>
+					<li>
+						<a  href="#Bartyspace" class='text-white hover:text-orange-400'>{ title }</a>
+				  	</li>
+					<button class="middle none center rounded-1g
+					 bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+					data-ripple-light="true" type="button">Hit me</button>
+				</ul>
+			  </div>
+			</div>
+		</header>
+        <slot />
+		<h2 id="About">About</h2>
+
+	</body>
+</html>
