@@ -1,0 +1,30 @@
+---
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="h-screen bg-gradient-to-b from-indigo-600 to-violet-800"></div>
+
+        <nav class="flex flex-wrap w-screen fixed h-20 top-6 border rounded-full z-40 border-indigo-400 "> 
+
+              <a href="#About" class="flex-none text-white hover:text-orange-400">About</a>
+              <a href="#work" class="flex-auto text-white hover:text-orange-400">My Work</a>
+              <a href="#Bartyspace" title="Navigate home" class="flex-auto text-white hover:text-orange-400">
+                <img src="../../Untitled-3.png" class="h-10" alt="Bartyspace">
+              </a>
+            <button class=" text-white bg-transparent hover:bg-white hover:text-black">
+              Hit me up
+            </button>
+
+        </nav> 
+//bg-gray-700 opacity-20 backdrop-blur
+      </body>
+</html>
