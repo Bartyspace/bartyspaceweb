@@ -13,18 +13,23 @@ const { title } = Astro.props;
   <body>
     <div class="h-screen bg-gradient-to-b from-indigo-600 to-violet-800"></div>
 
-        <nav class="flex flex-wrap w-screen fixed h-20 top-6 border rounded-full z-40 border-indigo-400 "> 
-
-              <a href="#About" class="flex-none text-white hover:text-orange-400">About</a>
-              <a href="#work" class="flex-auto text-white hover:text-orange-400">My Work</a>
-              <a href="#Bartyspace" title="Navigate home" class="flex-auto text-white hover:text-orange-400">
-                <img src="../../Untitled-3.png" class="h-10" alt="Bartyspace">
-              </a>
-            <button class=" text-white bg-transparent hover:bg-white hover:text-black">
-              Hit me up
-            </button>
-
+        <nav class="flex flex-wrap w-screen content-center fixed h-20 top-6 border rounded-full z-40 border-indigo-400 "> 
+         
+              <div class="justify-start">
+                <a href="#About" class=" mx-10 text-white hover:text-orange-400">About</a>
+                <a href="#work" class=" mx-10 text-white hover:text-orange-400">My Work</a>
+              </div>
+              <div class="grow justify-center">
+                <a href="#Bartyspace" title="Navigate home" class=" text-white hover:text-orange-400">
+                  <img src="../../Untitled-3.png" class="h-10" alt="Bartyspace">
+                </a>
+              </div>
+                <button class=" mx-10 text-white bg-transparent hover:bg-white hover:text-black">
+                  Hit me up
+                </button>
+               
         </nav> 
-//bg-gray-700 opacity-20 backdrop-blur
+
       </body>
 </html>
+bg-gray-700 opacity-20 backdrop-blur
