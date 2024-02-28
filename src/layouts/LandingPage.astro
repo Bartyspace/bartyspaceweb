@@ -11,25 +11,101 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div class="h-screen bg-gradient-to-b from-indigo-600 to-violet-800"></div>
+    <div
+      id="main"
+      class="h-screen bg-gradient-to-b to-indigo-600 from-violet-800"
+    >
+      <header class="max-[1024px]:container justify-center fixed top-10 w-full">
+        <div class=" grid grid-cols-3 items-center h-14 border-0 md:border rounded-full mx-4 sm:mx-20 xl:mx-96 bg-zinc-600 bg-opacity-50 backdrop-blur-sm">
+          <nav class="flex justify-center">
+            <a href="#about" class="mx-5 max-[1024px]:hidden text-white">About</a>
 
-        <nav class="flex flex-wrap w-screen content-center fixed h-20 top-6 border rounded-full z-40 border-indigo-400 "> 
-         
-              <div class="justify-start">
-                <a href="#About" class=" mx-10 text-white hover:text-orange-400">About</a>
-                <a href="#work" class=" mx-10 text-white hover:text-orange-400">My Work</a>
-              </div>
-              <div class="grow justify-center">
-                <a href="#Bartyspace" title="Navigate home" class=" text-white hover:text-orange-400">
-                  <img src="../../Untitled-3.png" class="h-10" alt="Bartyspace">
-                </a>
-              </div>
-                <button class=" mx-10 text-white bg-transparent hover:bg-white hover:text-black">
-                  Hit me up
-                </button>
-               
-        </nav> 
+            <a href="#work" class="mx-5 max-[1024px]:hidden text-white">My Work</a>
 
-      </body>
+            <a href="#services" class="mx-5 max-[1024px]:hidden text-white">Services</a>
+          </nav>
+            <a href="#main" class="flex flex-grow justify-center">
+            <img
+              src="../../Bartyspacelogo.png"
+              class="h-5 md:h-10"
+              alt="Bartyspace Logo"
+            />
+            </a>
+          <div class="flex justify-center ">
+          <button
+            type="button"
+            class=" text-white justify-center border rounded-full px-6 py-2 max-[1024px]:px-2 max-[1024px]:py-1">Hit me up</button
+          >
+        </div>
+        
+        </div>
+      </header>
+    </div>
+    <p>
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+      a<br />
+    </p>
+    <script
+      is:inline
+      src="
+            https:
+            cdnjs.cloudflare.com
+            ajax
+            libs
+            flowbite
+            1.8.0
+            flowbite.min.js"></button>
+        </div>
+      </header>
+      <!--
+  bg-gray-700 opacity-20 backdrop-blur
+
+container flex flex-wrap fixed items-center h-20 my-10 border rounded-full border-indigo-400 
+
+
+
+
+
+
+
+
+-->
+    </div></body>
 </html>
-bg-gray-700 opacity-20 backdrop-blur
