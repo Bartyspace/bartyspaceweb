@@ -13,103 +13,45 @@ const { title } = Astro.props;
   <body>
     <div
       id="main"
-      class="h-screen bg-gradient-to-b to-indigo-600 from-violet-800"
+      class="h-screen bg-gradient-to-b to-indigo-600 from-violet-800 animate-fade animate-once animate-duration-700 animate-ease-in"
     >
       <header class="max-[1024px]:container justify-center fixed top-10 w-full">
-        <div class=" grid grid-cols-3 items-center h-16 border-0 md:border border-zinc-500 rounded-full mx-4 sm:mx-20 xl:mx-96 bg-zinc-700 bg-opacity-50 backdrop-blur-sm">
+        <div
+          class="grid grid-cols-3 items-center h-16 border-0 md:border-0 border-zinc-500 rounded-full mx-4 sm:mx-20 xl:mx-96 bg-zinc-700 bg-opacity-50 backdrop-blur-sm"
+        >
           <nav class="flex justify-center">
-            <a href="#about" class="mx-5 max-[1024px]:hidden text-white">About</a>
+            <a href="#about" class="mx-5 max-lg:hidden text-white">About</a>
 
-            <a href="#work" class="mx-5 max-[1024px]:hidden text-white">My Work</a>
-
-            <a href="#services" class="mx-5 max-[1024px]:hidden text-white">Services</a>
-          </nav>
-            <div class="animate-jump animate-once animate-ease-in-out">
-            <a href="#main" class="flex flex-grow justify-center ">
-            <img
-              src="../../Bartyspace Labs transparet bg.svg"
-              class=""
-              alt="Bartyspace Logo"
-            />
-            </a>
-            </div>
-          <div class="flex justify-end pr-7">
-            <a href="#contact">
-            <button
-              type="button"
-              class=" text-white justify-center border rounded-full px-6 py-2 max-[1024px]:px-2 max-[1024px]:py-1">Hit me up</button
+            <a href="#projects" class="mx-5 max-lg:hidden text-white"
+              >Projects</a
             >
+
+            <a href="#services" class="mx-5 max-lg:hidden text-white"
+              >Services</a
+            >
+          </nav>
+          <div
+            class="hover:animate-jump animate-ease-in-out animate-normal animate-fill-backwards"
+          >
+            <a href="#main" class="flex flex-grow justify-center">
+              <img
+                src="../../Bartyspace Labs transparet bg.svg"
+                class=""
+                alt="Bartyspace Logo"
+              />
             </a>
           </div>
-        
+          <div class="flex justify-end pr-7">
+            <a href="#contact">
+              <button
+                type="button"
+                class="justify-center border rounded-full px-6 py-2 max-lg:px-2 max-lg::py-1 text-white hover:bg-white hover:text-black text-"
+                >Hire me</button
+              >
+            </a>
+          </div>
         </div>
       </header>
     </div>
-    <p>
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-      a<br />
-    </p>
-    <script
-      is:inline
-      src="
-            https:
-            cdnjs.cloudflare.com
-            ajax
-            libs
-            flowbite
-            1.8.0
-            flowbite.min.js"></button>
-        </div>
-      </header>
-      <!--
-  bg-gray-700 opacity-20 backdrop-blur
-
-container flex flex-wrap fixed items-center h-20 my-10 border rounded-full border-indigo-400 
-
-
-
-
-
-
-
-
--->
-    </div></body>
+  </body>
 </html>

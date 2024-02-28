@@ -21,7 +21,8 @@
   "devDependencies": {
     "@astrojs/partytown": "^2.0.4",
     "prettier": "3.2.5",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-animated": "^1.0.1"
   },
   "tailwindCSS.includeLanguages": {
     "html": "html",
