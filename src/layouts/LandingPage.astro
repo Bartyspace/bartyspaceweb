@@ -16,7 +16,7 @@ const { title } = Astro.props;
       class="h-screen bg-gradient-to-b to-indigo-600 from-violet-800"
     >
       <header class="max-[1024px]:container justify-center fixed top-10 w-full">
-        <div class=" grid grid-cols-3 items-center h-14 border-0 md:border rounded-full mx-4 sm:mx-20 xl:mx-96 bg-zinc-600 bg-opacity-50 backdrop-blur-sm">
+        <div class=" grid grid-cols-3 items-center h-16 border-0 md:border border-zinc-500 rounded-full mx-4 sm:mx-20 xl:mx-96 bg-zinc-700 bg-opacity-50 backdrop-blur-sm">
           <nav class="flex justify-center">
             <a href="#about" class="mx-5 max-[1024px]:hidden text-white">About</a>
 
@@ -24,19 +24,23 @@ const { title } = Astro.props;
 
             <a href="#services" class="mx-5 max-[1024px]:hidden text-white">Services</a>
           </nav>
-            <a href="#main" class="flex flex-grow justify-center">
+            <div class="animate-jump animate-once animate-ease-in-out">
+            <a href="#main" class="flex flex-grow justify-center ">
             <img
-              src="../../Bartyspacelogo.png"
-              class="h-5 md:h-10"
+              src="../../Bartyspace Labs transparet bg.svg"
+              class=""
               alt="Bartyspace Logo"
             />
             </a>
-          <div class="flex justify-center ">
-          <button
-            type="button"
-            class=" text-white justify-center border rounded-full px-6 py-2 max-[1024px]:px-2 max-[1024px]:py-1">Hit me up</button
-          >
-        </div>
+            </div>
+          <div class="flex justify-end pr-7">
+            <a href="#contact">
+            <button
+              type="button"
+              class=" text-white justify-center border rounded-full px-6 py-2 max-[1024px]:px-2 max-[1024px]:py-1">Hit me up</button
+            >
+            </a>
+          </div>
         
         </div>
       </header>

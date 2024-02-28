@@ -20,7 +20,8 @@
   },
   "devDependencies": {
     "@astrojs/partytown": "^2.0.4",
-    "prettier": "3.2.5"
+    "prettier": "3.2.5",
+    "tailwindcss-animate": "^1.0.7"
   },
   "tailwindCSS.includeLanguages": {
     "html": "html",
