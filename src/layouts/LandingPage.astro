@@ -1,4 +1,6 @@
 ---
+import RoundedButton from "../components/RoundedButton.astro";
+import button from "../components/RoundedButton.astro";
 const { title } = Astro.props;
 ---
 
@@ -43,11 +45,7 @@ const { title } = Astro.props;
           </div>
           <div class="flex justify-end pr-7">
             <a href="#contact">
-              <button
-                type="button"
-                class="justify-center border rounded-full px-6 py-2 max-lg:px-2 max-lg::py-1 text-white hover:bg-white hover:text-black text-"
-                >Hire me</button
-              >
+              <RoundedButton></RoundedButton>
             </a>
           </div>
         </div>
