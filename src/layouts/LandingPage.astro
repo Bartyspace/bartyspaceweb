@@ -1,6 +1,6 @@
 ---
 import RoundedButton from "../components/RoundedButton.astro";
-import button from "../components/RoundedButton.astro";
+import ResponsiveNav from "../components/ResponsiveNav.astro";
 const { title } = Astro.props;
 ---
 
@@ -21,17 +21,9 @@ const { title } = Astro.props;
         <div
           class="grid grid-cols-3 items-center h-16 border-0 md:border-0 border-zinc-500 rounded-full mx-4 sm:mx-20 xl:mx-96 bg-zinc-700 bg-opacity-50 backdrop-blur-sm"
         >
-          <nav class="flex justify-center">
-            <a href="#about" class="mx-5 max-lg:hidden text-white">About</a>
+        <ResponsiveNav />
 
-            <a href="#projects" class="mx-5 max-lg:hidden text-white"
-              >Projects</a
-            >
 
-            <a href="#services" class="mx-5 max-lg:hidden text-white"
-              >Services</a
-            >
-          </nav>
           <div
             class="hover:animate-jump animate-ease-in-out animate-normal animate-fill-backwards"
           >
@@ -45,7 +37,7 @@ const { title } = Astro.props;
           </div>
           <div class="flex justify-end pr-7">
             <a href="#contact">
-              <RoundedButton></RoundedButton>
+              <RoundedButton />
             </a>
           </div>
         </div>

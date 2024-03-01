@@ -1,0 +1,50 @@
+---
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+  Dropdown,
+  DropdownItems,
+  DropdownSubmenu,
+} from "astro-navbar";
+---
+
+<Astronav>
+  <MenuIcon class="w-6 h-6 text-white" />
+
+  <MenuItems class="hidden lg:flex">
+    <Dropdown class="group">
+      <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
+        <nav class="flex justify-center">
+          <a href="#about" class="mx-5 max-lg:hidden text-white active:border-b"
+            >About</a
+          >
+
+          <a href="#projects" class="mx-5 max-lg:hidden text-white">Projects</a>
+
+          <a href="#services" class="mx-5 max-lg:hidden text-white">Services</a>
+        </nav>
+      </div>
+
+      <DropdownItems>
+        <div class="absolute top-0">
+          <ul>
+            <li>Menu 1</li>
+            <li>Menu 2</li>
+            <li>
+              <DropdownSubmenu>
+                <button>Submenu</button>
+                <DropdownItems>
+                  <ul>
+                    <li>Sub Menu 1</li>
+                    <li>Sub Menu 2</li>
+                  </ul>
+                </DropdownItems>
+              </DropdownSubmenu>
+            </li>
+          </ul>
+        </div>
+      </DropdownItems>
+    </Dropdown>
+  </MenuItems>
+</Astronav>

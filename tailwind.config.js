@@ -6,8 +6,11 @@ export default {
   ],
   darkMode: "false",
   theme: {
-    extend: {},
+    extend: {
+      screens: {         
+        'xxl': '1440px',       
+                },     
+    },
   },
-  plugins: [require("flowbite/plugin"), require('tailwindcss-animated'),
-],
+  plugins: [require("flowbite/plugin"), require("tailwindcss-animated")],
 };
