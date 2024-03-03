@@ -1,6 +1,13 @@
 ---
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+  Dropdown,
+  DropdownItems,
+  DropdownSubmenu,
+} from "astro-navbar";
 import RoundedButton from "../components/RoundedButton.astro";
-import ResponsiveNav from "../components/ResponsiveNav.astro";
 const { title } = Astro.props;
 ---
 
@@ -13,38 +20,75 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div
-      id="main"
-      class="h-screen bg-gradient-to-b to-indigo-600 from-violet-800 animate-fade animate-once animate-duration-700 animate-ease-in"
-    >
-      <header class="max-[1024px]:container justify-center fixed top-10 w-full">
-        <div
-          class="grid grid-cols-3 items-center h-16 border-0 md:border-0 border-zinc-500 rounded-full mx-4 sm:mx-20 xl:mx-96 bg-zinc-700 bg-opacity-50 backdrop-blur-sm"
-        >
-        <ResponsiveNav />
+    <header class="flex justify-center top-10 z-40 fixed w-full">
+      <div
+        class="items-center w-11/12 max-w-7xl h-16 border-0 md:border-0 border-zinc-500 rounded-full bg-zinc-700 bg-opacity-50 backdrop-blur-sm"
+      >
+        <div class="grid grid-cols-5 items-center">
+          <Astronav>
+            <div class="flex lg:hidden">
+              <MenuIcon class="w-6 h-6 ml-6 text-white" />
+            </div>
+            <MenuItems
+              class="hidden items-center lg:ml-10 lg:gap-x-7 lg:flex lg:flex-row max-lg:absolute max-lg:top-16 max-lg:ml-7 max-lg:w-40 max-lg:rounded-b-3xl max-lg:bg-zinc-700 max-lg:bg-opacity-50 max-lg:backdrop-blur-sm"
+            >
+              <a
+                href="#about"
+                class="flex text-white active:border-b max-lg:justify-center max-lg:my-2"
+                >About</a
+              >
 
+              <a href="#projects" class="flex text-white active:border-b max-lg:justify-center max-lg:my-2"
+                >Projects</a
+              >
 
-          <div
-            class="hover:animate-jump animate-ease-in-out animate-normal animate-fill-backwards"
-          >
-            <a href="#main" class="flex flex-grow justify-center">
+              <a href="#services" class="flex text-white active:border-b max-lg:justify-center max-lg:my-2"
+                >Services</a
+              >
+
+              <a
+                href="#contant"
+                class="flex text-white active:border-b max-lg:justify-center max-lg:my-2 md:hidden"
+                >Hire me</a
+              >
+            </MenuItems>
+          </Astronav>
+          <div class="flex col-span-3 justify-center">
+            <a
+              href="#main"
+              class="hover:animate-jump animate-ease-in-out animate-normal animate-fill-backwards"
+            >
               <img
                 src="../../Bartyspace Labs transparet bg.svg"
-                class=""
+                class="w-full h-16"
                 alt="Bartyspace Logo"
               />
             </a>
           </div>
-          <div class="flex justify-end pr-7">
+          <div class="flex items-center justify-end mr-8 mt-2 mb-2">
             <a href="#contact">
               <RoundedButton />
             </a>
           </div>
         </div>
-      </header>
-      <div class="">
-        <h1 class="text-white text-center h-1/2">Web developer</h1>
       </div>
-    </div>
+    </header>
+    <main
+      id="main"
+      class="bg-gradient-to-b to-indigo-600 from-violet-800 animate-fade animate-once animate-duration-700 animate-ease-in"
+    >
+      <section class="relative z-10 w-full bg-neutrals-900">
+        <div
+          class="sticky flex container h-screen flex-col justify-center py-28"
+        >
+          <h1
+            class="flex justify-center text-7xl max-md:text-5xl text-white text-start"
+          >
+            Hi,<br />I'm Bartyspace<br /> web developer from Czechia
+          </h1>
+        </div>
+      </section>
+    </main>
+    <section id="about"></section>
   </body>
 </html>
