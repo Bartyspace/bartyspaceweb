@@ -1,0 +1,67 @@
+---
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { Image } from "astro:assets";
+import BartyspaceLogo from "../../../public/Bartyspace Labs transparet bg.svg";
+import RoundedButton from "../RoundedButton.astro";
+---
+
+<header id="header" class="flex justify-center z-20 top-10 fixed w-full">
+  <div
+    id="menuBg"
+    class="items-center w-11/12 max-w-7xl h-16 absolute rounded-3xl bg-zinc-700 bg-opacity-50 backdrop-blur-sm"
+  >
+  </div>
+  <div class="grid grid-cols-5 items-center w-11/12 max-w-7xl h-16 z-40">
+    <Astronav>
+      <div class="flex lg:hidden">
+        <MenuIcon class="w-6 h-6 ml-10 text-white" />
+      </div>
+
+      <MenuItems
+        class="hidden justify-center items-center lg:ml-12 lg:gap-x-7 lg:flex lg:flex-row max-lg:absolute max-lg:top-0 max-lg:rounded-3xl -z-10 max-lg:w-11/12 max-lg:bg-zinc-700 max-lg:bg-opacity-50 max-lg:backdrop-blur-sm"
+      >
+        <a
+          href="#about"
+          class="flex text-white active:border-b max-lg:justify-center max-lg:mt-24 max-lg:my-6"
+          >About</a
+        >
+
+        <a
+          href="#projects"
+          class="flex text-white active:border-b max-lg:justify-center max-lg:my-6"
+          >Projects</a
+        >
+
+        <a
+          href="#services"
+          class="flex text-white active:border-b max-lg:justify-center max-lg:my-6"
+          >Services</a
+        >
+
+        <a
+          href="#contant"
+          class="flex text-white active:border-b max-lg:justify-center max-lg:my-6 md:hidden"
+          >Hire me</a
+        >
+      </MenuItems>
+    </Astronav>
+    <div class="flex col-span-3 justify-center items-center">
+      <a
+        href="#main"
+        class="hover:animate-jump animate-ease-in-out animate-normal animate-fill-backwards"
+      >
+        <Image
+          loading={"eager"}
+          src={BartyspaceLogo}
+          class="w-full h-14"
+          alt="Bartyspace Logo"
+        />
+      </a>
+    </div>
+    <div class="flex items-center justify-end mr-8 mt-2 mb-2">
+      <a href="#contact">
+        <RoundedButton />
+      </a>
+    </div>
+  </div>
+</header>

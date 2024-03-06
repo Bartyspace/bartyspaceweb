@@ -6,6 +6,9 @@ export default {
   ],
   darkMode: "false",
   theme: {
+    fontFamily: {
+      display: ["Poppins"],
+    },
     extend: {
       container: {
         center: true,
@@ -23,7 +26,6 @@ export default {
           lg: "1024px",
           xl: "1280px",
           "2xl": "1580px",
-          
         },
       },
     },
