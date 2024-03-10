@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 @import "@fontsource-variable/tilt-warp";
 
-.landing-page {
+body {
   font-family:
     "Tilt Warp Variable",
     system-ui,
@@ -17,9 +17,18 @@
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
-  font-weight: bold;
+
 }
 .header {
   font-weight: bold;
   font-size: large;
 }
+
+h1 {
+  text-align: center;
+  line-height: 1.2;
+}
+html {
+  --scroll-behavior: smooth!important;
+  scroll-behavior: smooth!important;
+  }
