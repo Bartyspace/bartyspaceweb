@@ -1,14 +1,29 @@
+---
+import { Image } from "astro:assets";
+import favicon from "../../public/favicon.svg";
+---
+
 <section
   id="landing-page"
-  class="flex h-screen w-full items-center justify-center bg-gradient-to-b to-indigo-600 from-violet-800 animate-fade-down animate-once animate-duration-1500"
+  class="flex h-screen w-screen items-center justify-center bg-gradient-to-b to-indigo-600 from-violet-800 animate-fade-down animate-once animate-duration-1500"
 >
-  <div class="relative z-10">
-    <div class="sticky flex flex-col justify-center items-start py-28">
-      <h1 class="text-7xl max-md:text-5xl text-stone-900 font-bold text-start">
+ 
+  <div class="flex container absolute h-[500px] w-[500px] -left-64">
+    <Image
+      loading={"eager"}
+      src={favicon}
+      class="w-full h-full opacity-70"
+      alt="favicon"
+    />
+  </div>
+  <div class="z-10">
+    <div class="flex flex-col justify-center items-start py-28">
+      <h1 class="text-7xl max-md:text-5xl text-slate-900 font-bold text-start">
         Hi,<br />
         I'm <span class="font-extrabold text-white">Bartyspace</span><br />
         a web designer
       </h1>
     </div>
   </div>
+
 </section>
