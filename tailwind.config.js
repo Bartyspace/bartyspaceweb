@@ -7,7 +7,6 @@ export default {
   darkMode: "false",
   theme: {
     fontFamily: {
-      display: ["Poppins"],
     },
     extend: {
       container: {
