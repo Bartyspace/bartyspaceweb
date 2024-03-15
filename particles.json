@@ -1,30 +1,50 @@
----
-import { Image } from "astro:assets";
-import favicon from "../../public/favicon.svg";
-import Particles from "astro-particles";
-import type { ISourceOptions } from "tsparticles-engine";
-import "@styles/global.css";
 
-const options: ISourceOptions = {
   autoPlay: true,
+  background: {
+    color: {
+      value: "#ffffff"
+    },
+    image: "",
+    position: "50% 50%",
+    repeat: "no-repeat",
+    size: "cover",
+    opacity: 0
+  },
+  backgroundMask: {
+    composite: "destination-out",
+    cover: {
+      color: {
+        value: "#fff"
+      },
+      opacity: 1
+    },
+    enable: false
+  },
+  backgroundMode: {
+    enable: true,
+    zIndex: 0
+  },
   detectRetina: true,
-  fpsLimit: 120,
-  "fullScreen": {
-    "enable": true,
-    "zIndex": -10
+  fpsLimit: 60,
+  infection: {
+    cure: false,
+    delay: 0,
+    enable: false,
+    infections: 0,
+    stages: []
   },
   interactivity: {
     detectsOn: "canvas",
     events: {
       onClick: {
         enable: false,
-        mode: "push",
+        mode: "push"
       },
       onDiv: {
         selectors: [],
         enable: false,
         mode: [],
-        type: "circle",
+        type: "circle"
       },
       onHover: {
         enable: true,
@@ -32,74 +52,74 @@ const options: ISourceOptions = {
         parallax: {
           enable: false,
           force: 2,
-          smooth: 10,
-        },
+          smooth: 10
+        }
       },
-      resize: false,
+      resize: false
     },
     modes: {
       attract: {
         distance: 200,
         duration: 0.4,
-        speed: 1,
+        speed: 1
       },
       bounce: {
-        distance: 200,
+        distance: 200
       },
       bubble: {
         distance: 400,
         duration: 2,
         opacity: 0.8,
-        size: 40,
+        size: 40
       },
       connect: {
         distance: 150,
         links: {
-          opacity: 0.3,
+          opacity: 0.3
         },
-        radius: 100,
+        radius: 100
       },
       grab: {
         distance: 400,
         links: {
           blink: false,
           consent: false,
-          opacity: 1,
-        },
+          opacity: 1
+        }
       },
       light: {
         area: {
           gradient: {
             start: {
-              value: "#ffffff",
+              value: "#ffffff"
             },
             stop: {
-              value: "#000000",
-            },
+              value: "#000000"
+            }
           },
-          radius: 1000,
+          radius: 1000
         },
         shadow: {
           color: {
-            value: "#000000",
+            value: "#000000"
           },
-          length: 2000,
-        },
+          length: 2000
+        }
       },
       push: {
-        quantity: 4,
+        quantity: 4
       },
       remove: {
-        quantity: 2,
+        quantity: 2
       },
       repulse: {
         distance: 200,
         duration: 0.4,
-        speed: 1,
+        speed: 1
       },
       slow: {
         factor: 3,
-        radius: 200,
+        radius: 200
       },
       trail: {
         delay: 1,
@@ -107,185 +127,194 @@ const options: ISourceOptions = {
         particles: {
           bounce: {
             horizontal: {
-              random: {},
+              random: {}
             },
             vertical: {
-              random: {},
-            },
+              random: {}
+            }
           },
           collisions: {
             bounce: {
               horizontal: {
-                random: {},
+                random: {}
               },
               vertical: {
-                random: {},
-              },
-            },
+                random: {}
+              }
+            }
           },
           color: {
-            animation: {},
+            animation: {}
           },
           life: {
             delay: {
-              random: {},
+              random: {}
             },
             duration: {
-              random: {},
-            },
+              random: {}
+            }
           },
           links: {
             shadow: {},
-            triangles: {},
+            triangles: {}
           },
           move: {
             angle: {},
             attract: {
-              rotate: {},
+              rotate: {}
             },
             gravity: {},
             noise: {
               delay: {
-                random: {},
-              },
+                random: {}
+              }
             },
             outModes: {},
-            trail: {},
+            trail: {}
           },
           number: {
-            density: {},
+            density: {}
           },
           opacity: {
             animation: {},
-            random: {},
+            random: {}
           },
           rotate: {
-            animation: {},
+            animation: {}
           },
           shadow: {
-            offset: {},
+            offset: {}
           },
           shape: {},
           size: {
             animation: {},
-            random: {},
+            random: {}
           },
-
+          stroke: {
+            color: "" {
+              value: ,
+              animation: {
+                enable: false,
+                speed: 0,
+                sync: false
+              }
+            }
+          },
           twinkle: {
             lines: {},
-            particles: {},
-          },
-        },
-      },
-    },
+            particles: {}
+          }
+        }
+      }
+    }
   },
   manualParticles: [],
   motion: {
     disable: false,
     reduce: {
       factor: 4,
-      value: false,
-    },
+      value: false
+    }
   },
   particles: {
     bounce: {
       horizontal: {
         random: {
           enable: false,
-          minimumValue: 0.1,
+          minimumValue: 0.1
         },
-        value: 1,
+        value: 1
       },
       vertical: {
         random: {
           enable: false,
-          minimumValue: 0.1,
+          minimumValue: 0.1
         },
-        value: 1,
-      },
+        value: 1
+      }
     },
     collisions: {
       bounce: {
         horizontal: {
           random: {
             enable: false,
-            minimumValue: 0.1,
+            minimumValue: 0.1
           },
-          value: 1,
+          value: 1
         },
         vertical: {
           random: {
             enable: false,
-            minimumValue: 0.1,
+            minimumValue: 0.1
           },
-          value: 1,
-        },
+          value: 1
+        }
       },
       enable: false,
-      mode: "bounce",
+      mode: "bounce"
     },
     color: {
       value: "#000000",
       animation: {
         enable: false,
         speed: 20,
-        sync: false,
-      },
+        sync: false
+      }
     },
     life: {
       count: 0,
       delay: {
         random: {
           enable: false,
-          minimumValue: 0,
+          minimumValue: 0
         },
         value: 0,
-        sync: false,
+        sync: false
       },
       duration: {
         random: {
           enable: false,
-          minimumValue: 0.0001,
+          minimumValue: 0.0001
         },
         value: 0,
-        sync: false,
-      },
+        sync: false
+      }
     },
     links: {
       blink: false,
       color: {
-        value: "#000000",
+        value: "#000000"
       },
-      consent: true,
-      distance: 120,
+      consent: false,
+      distance: 130,
       enable: true,
-      frequency: 0.7,
-      opacity: 0.2,
+      frequency: 0.7000000000000001,
+      opacity: 0.35000000000000003,
       shadow: {
-        blur: 20,
+        blur: 5,
         color: {
-          value: "#000000",
+          value: "#00ff00"
         },
-        enable: false,
+        enable: false
       },
       triangles: {
-        enable: true,
-        frequency: 1.2,
+        enable: false,
+        frequency: 1
       },
-      width: 1,
-      warp: false,
+      width: 1.2,
+      warp: false
     },
     move: {
       angle: {
         offset: 45,
-        value: 90,
+        value: 90
       },
       attract: {
         enable: false,
         rotate: {
           x: 600,
-          y: 1200,
-        },
+          y: 1200
+        }
       },
       direction: "none",
       distance: 0,
@@ -293,60 +322,60 @@ const options: ISourceOptions = {
       gravity: {
         acceleration: 9.81,
         enable: false,
-        maxSpeed: 50,
+        maxSpeed: 50
       },
       noise: {
         delay: {
           random: {
             enable: false,
-            minimumValue: 0,
+            minimumValue: 0
           },
-          value: 0,
+          value: 0
         },
-        enable: false,
+        enable: false
       },
       outModes: {
         default: "out",
         bottom: "out",
         left: "out",
         right: "out",
-        top: "out",
+        top: "out"
       },
       random: true,
       size: false,
-      speed: 0.3,
+      speed: 0.4,
       straight: false,
       trail: {
         enable: false,
         length: 10,
         fillColor: {
-          value: "#000000",
-        },
+          value: "#000000"
+        }
       },
       vibrate: false,
-      warp: false,
+      warp: false
     },
     number: {
       density: {
-        enable: false,
+        enable: true,
         area: 1000,
-        factor: 1000,
+        factor: 1000
       },
-      limit: 100,
-      value: 100,
+      limit: 0,
+      value: 80
     },
     opacity: {
       random: {
         enable: false,
-        minimumValue: 0.1,
+        minimumValue: 0.1
       },
       value: 1,
       animation: {
         enable: false,
         minimumValue: 0.1,
         speed: 3,
-        sync: false,
-      },
+        sync: false
+      }
     },
     reduceDuplicates: false,
     rotate: {
@@ -355,38 +384,39 @@ const options: ISourceOptions = {
       animation: {
         enable: false,
         speed: 0,
-        sync: false,
+        sync: false
       },
       direction: "clockwise",
-      path: false,
+      path: false
     },
     shadow: {
       blur: 0,
       color: {
-        value: "#000000",
+        value: "#000000"
       },
       enable: false,
       offset: {
         x: 0,
-        y: 0,
-      },
+        y: 0
+      }
     },
     shape: {
       options: {
-        circle: {
+        polygon: {
+          sides: 5
         },
         image: {
           src: "https://cdn.matteobruni.it/images/particles/github.svg",
           width: 100,
-          height: 100,
-        },
+          height: 100
+        }
       },
-      type: "circle",
+      type: "circle"
     },
     size: {
       random: {
         enable: false,
-        minimumValue: 1,
+        minimumValue: 1
       },
       value: 2,
       animation: {
@@ -395,8 +425,8 @@ const options: ISourceOptions = {
         minimumValue: 0.1,
         speed: 20,
         startValue: "max",
-        sync: false,
-      },
+        sync: false
+      }
     },
     stroke: {
       width: 0,
@@ -405,10 +435,10 @@ const options: ISourceOptions = {
         animation: {
           enable: false,
           speed: 0,
-          sync: false,
-        },
+          sync: false
+        }
       },
-      opacity: 1,
+      opacity: 1
     },
     twinkle: {
       lines: {
@@ -416,46 +446,19 @@ const options: ISourceOptions = {
         frequency: 10000,
         opacity: 0.17,
         color: {
-          value: "#000000",
-        },
+          value: "#000000"
+        }
       },
       particles: {
         enable: false,
         frequency: 0.05,
         opacity: 1,
         color: {
-          value: "#9a7e7e",
-        },
-      },
-    },
+          value: "#9a7e7e"
+        }
+      }
+    }
   },
   pauseOnBlur: true,
-  themes: [],
-};
----
-
-<section
-  id="landing-page"
-  class="flex relative h-screen w-screen -z-20 items-center justify-center bg-gradient-to-b from-sky-600 via-indigo-700 to-violet-900 animate-fade-down animate-once animate-duration-1500"
-> <div class="absolute">
-  <Particles id="tsparticles" options={options} init="particlesInit" />
-</div>
-  <div class="flex container absolute h-[500px] w-[500px] -left-64">
-    <Image
-      
-      loading={"eager"}
-      src={favicon}
-      class="w-full h-full opacity-70"
-      alt="favicon"
-    />
-  </div>
-
-    <div  class="flex flex-col justify-center items-start py-28 ">
-      <h1  class="text-7xl max-md:text-5xl text-white font-bold text-start">
-        Hi,<br />
-        I'm <span class="font-extrabold">Bartyspace</span><br />
-        a web designer
-      </h1>
-    </div>
-  </div>
-</section>
+  themes: []
+}
