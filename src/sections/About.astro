@@ -4,10 +4,9 @@ import MyPhoto from "../../public/myphoto.jpg";
 import "../styles/global.css";
 ---
 
-
 <section
   id="about"
-  class="w-full min-h-screen max-lg:flex-col lg:grid lg:grid-cols-3 bg-indigo-950"
+  class="w-full min-h-screen max-lg:flex-col xl:grid xl:grid-cols-2 bg-indigo-950"
 >
   <Image
     src={MyPhoto}
@@ -15,7 +14,7 @@ import "../styles/global.css";
     loading={"eager"}
     class="h-screen w-full object-center pt-5 object-scale-down"
   />
-  <div class="col-span-2">
+  <div class="">
     <h2 class="pt-32 text-3xl text-white font-semibold text-center">
       About me
     </h2>
@@ -63,4 +62,3 @@ import "../styles/global.css";
     </div>
   </div>
 </section>
-

@@ -9,8 +9,22 @@ import "../../styles/global.css";
 <header id="header" class="flex justify-center z-20 top-10 fixed w-full">
   <div
     id="menuBg"
-    class="items-center w-11/12 max-w-7xl h-16 absolute rounded-3xl bg-zinc-700 bg-opacity-50 backdrop-blur-sm"
+    class="items-center w-11/12 max-w-7xl h-16 absolute rounded-3xl active-dynamic"
   >
+    <script is:inline>
+      var scrollPosition = window.scrollY;
+      var navbar = document.getElementsByClassName("active-dynamic")[0];
+
+      window.addEventListener("scroll", function () {
+        scrollPosition = window.scrollY;
+
+        if (scrollPosition >= 30) {
+          navbar.classList.remove("dynamic");
+        } else {
+          navbar.classList.add("dynamic");
+        }
+      });
+    </script>
   </div>
   <div class="grid grid-cols-5 items-center w-11/12 max-w-7xl h-16 z-40">
     <Astronav>
