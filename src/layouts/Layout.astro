@@ -17,28 +17,6 @@ import About from "../sections/About.astro";
 
   <LandingPage />
   <About />
-  <script>
-    import { type Container, type Engine, tsParticles } from "tsparticles-engine";
-    import { loadFull } from "tsparticles";
 
-    declare global {
-    interface Window { particlesInit: any; }
-    }
-    declare global {
-    interface Window { particlesLoaded: any; }
-    }
-    // the function name is the parameter passed to the init attribute
-    // required
-    // add the function to window is mandatory, it will be searched there
-    window.particlesInit = async function (engine: Engine) {
-        await loadFull(engine);
-    }
-        // the function name is the parameter passed to the loaded attribute
-    // optional
-    // add the function to window is mandatory, it will be searched there
-    //window.particlesLoaded = function (container: Container) {
-    //    console.log("particlesLoaded callback");
-    //}
-  </script>
 </body>
 </Head>
