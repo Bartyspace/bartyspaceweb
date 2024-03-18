@@ -2,13 +2,11 @@
 import { Image } from "astro:assets";
 import favicon from "../../public/favicon.svg";
 import "../styles/global.css";
-import { fade } from "astro:transitions";
 ---
 
 <section
   id="landing-page"
-  class="flex h-screen w-screen -z-20 items-center justify-center bg-gradient-to-b from-sky-600 via-indigo-700 to-violet-900"
-  transition:animate={fade({ duration: "0.4s" })}
+  class="flex h-screen w-screen -z-20 items-center justify-center bg-no-repeat bg-gradient-to-b from-sky-600 via-indigo-700 to-violet-900 animate-fade-down animate-ease-in"
 >
   <div class="flex container absolute h-[500px] w-[500px] -left-64">
     <Image
