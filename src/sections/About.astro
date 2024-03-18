@@ -6,15 +6,15 @@ import "../styles/global.css";
 
 <section
   id="about"
-  class="w-full min-h-screen max-lg:flex-col xl:grid xl:grid-cols-2 bg-indigo-950"
+  class="w-full min-h-screen lg:grid lg:grid-cols-2 bg-indigo-950 animate-fade-down"
 >
   <Image
     src={MyPhoto}
     alt="Me hiking"
     loading={"lazy"}
-    class="h-screen w-auto max-h-screen object-scale-down object-center"
+    class="h-screen w-full max-h-screen object-cover object-center"
   />
-  <div class="flex flex-col justify-center">
+  <div class="flex flex-col justify-center max-lg:mt-10">
     <h2
       class="container w-52 text-3xl text-white font-semibold text-center border rounded-full border-zinc-500 bg-zinc-700 bg-opacity-30"
     >
@@ -22,7 +22,7 @@ import "../styles/global.css";
     </h2>
 
     <div class="container pt-10 items-center justify-center">
-      <p class="text-center text-white mx-40 max-sm:mx-5 text-lg">
+      <p class="text-center text-white mx-40 lg:mx-10 max-lg:mx-5 text-lg">
         Passionate web developer from Czechia, specializing in modern,
         user-friendly websites. I constantly enhance my skills to stay current
         with the latest web development trends. Experienced in various
