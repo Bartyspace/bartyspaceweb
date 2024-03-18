@@ -1,23 +1,16 @@
 ---
 import ResponsiveNav from "../components/layout/ResponsiveNav.astro";
 import Head from "../components/layout/Head.astro";
-import LandingPage from "../sections/LandingPage.astro";
+import LandingPage from "../sections/Main.astro";
 import About from "../sections/About.astro";
 import "../styles/global.css";
-
-
 ---
 
 <Head title="Bartyspace Labs" />
 
-
-<body>
-  <div id="main"></div>
-
+<body class="w-screen">
   <ResponsiveNav />
 
   <LandingPage />
   <About />
-
 </body>
-</Head>
