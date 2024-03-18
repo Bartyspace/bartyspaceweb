@@ -4,6 +4,10 @@
 @import url("https://fonts.cdnfonts.com/css/tt-lakes-neue-trial");
 body {
   font-family: "TT Lakes Neue Trial";
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
 }
 .header {
   font-weight: bold;
@@ -20,7 +24,7 @@ html {
 }
 .active-dynamic {
   background-color: #3f3f46;
-  opacity: 0.5;
+  opacity: 0.65;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }

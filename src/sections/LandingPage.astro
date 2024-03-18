@@ -2,22 +2,24 @@
 import { Image } from "astro:assets";
 import favicon from "../../public/favicon.svg";
 import "../styles/global.css";
+import { fade } from "astro:transitions";
 ---
+
 <section
   id="landing-page"
-  class="flex h-screen w-screen -z-20 items-center justify-center bg-gradient-to-b from-sky-600 via-indigo-700 to-violet-900 animate-fade-down animate-once animate-duration-1500"
+  class="flex h-screen w-screen -z-20 items-center justify-center bg-gradient-to-b from-sky-600 via-indigo-700 to-violet-900"
+  transition:animate={fade({ duration: "0.4s" })}
 >
-  
   <div class="flex container absolute h-[500px] w-[500px] -left-64">
     <Image
       loading={"eager"}
       src={favicon}
-      class="w-full h-full opacity-70"
-      alt="favicon"
+      class="opacity-70"
+      alt="BartyspaceLabs"
     />
   </div>
 
-  <div class="flex flex-col justify-center items-start py-28">
+  <div class="flex flex-col justify-center items-start py-28 z-20">
     <h1 class="text-7xl max-md:text-5xl text-white font-bold text-start">
       Hi,<br />
       I'm <span class="font-extrabold">Bartyspace</span><br />

@@ -9,18 +9,20 @@ import "../../styles/global.css";
 <header id="header" class="flex justify-center z-20 top-10 fixed w-full">
   <div
     id="menuBg"
-    class="items-center w-11/12 max-w-7xl h-16 absolute rounded-3xl active-dynamic"
+    class="items-center w-11/12 max-w-7xl h-16 absolute rounded-3xl"
   >
     <script is:inline>
       var scrollPosition = window.scrollY;
-      var navbar = document.getElementsByClassName("active-dynamic")[0];
+      var navbar = document.getElementById("menuBg");
 
       window.addEventListener("scroll", function () {
         scrollPosition = window.scrollY;
 
         if (scrollPosition >= 30) {
           navbar.classList.remove("dynamic");
-        } else {
+          navbar.classList.add("active-dynamic");
+        } else if (scrollPosition <= 30) {
+          navbar.classList.remove("active-dynamic");
           navbar.classList.add("dynamic");
         }
       });
@@ -69,7 +71,7 @@ import "../../styles/global.css";
           loading={"eager"}
           src={BartyspaceLogo}
           class="w-full h-14"
-          alt="Bartyspace Logo"
+          alt="BartyspaceLabs"
         />
       </a>
     </div>
