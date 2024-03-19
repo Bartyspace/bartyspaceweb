@@ -1,27 +1,22 @@
 ---
-import { Image } from "astro:assets";
-import favicon from "../../public/favicon.svg";
-import "../styles/global.css";
+import { Image } from 'astro:assets'
+import favicon from '../../public/favicon.svg'
+import '../styles/global.css'
 ---
 
 <section
-  id="main"
-  class="flex h-screen w-screen -z-20 items-center justify-center bg-no-repeat bg-gradient-to-b from-sky-600 via-indigo-700 to-violet-900 animate-fade-down animate-ease-in"
+	id="main"
+	class="flex h-screen w-screen animate-fade-down items-center justify-center bg-gradient-to-b from-sky-600 from-40% to-indigo-950 bg-no-repeat animate-ease-out"
 >
-  <div class="flex container absolute h-[500px] w-[500px] -left-64">
-    <Image
-      loading={"eager"}
-      src={favicon}
-      class="opacity-70"
-      alt="BartyspaceLabs"
-    />
-  </div>
+	<div class="container absolute -left-64">
+		<Image loading={'eager'} src={favicon} class="opacity-70" alt="BartyspaceLabs" />
+	</div>
 
-  <div class="flex flex-col justify-center items-start py-28 z-20">
-    <h1 class="text-7xl max-md:text-5xl text-white font-bold text-start">
-      Hi,<br />
-      I'm <span class="font-extrabold">Bartyspace</span><br />
-      a web designer
-    </h1>
-  </div>
+	<div class="flex flex-col items-start justify-center py-28">
+		<h1 class="text-start text-7xl font-bold text-white max-md:text-5xl">
+			Hi,<br />
+			I'm <span class="font-extrabold">Bartyspace</span><br />
+			a web designer
+		</h1>
+	</div>
 </section>

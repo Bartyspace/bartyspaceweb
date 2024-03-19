@@ -1,103 +1,70 @@
 ---
-import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
-import { Image } from "astro:assets";
-import BartyspaceLogo from "../../../public/Bartyspace Labs transparet bg.svg";
-import RoundedButton from "../RoundedButton.astro";
-import "../../styles/global.css";
+import { Astronav, MenuItems, MenuIcon } from 'astro-navbar'
+import { Image } from 'astro:assets'
+import BartyspaceLogo from '../../../public/Bartyspace Labs transparet bg.svg'
+import RoundedButton from '../RoundedButton.astro'
+import '../../styles/global.css'
 ---
 
-<header class="flex justify-center z-20 top-10 fixed w-screen">
-  <div
-    id="menuBg"
-    class="items-center w-11/12 max-w-7xl h-16 absolute rounded-full"
-  >
-    <!-- Vypíná a zapíná pozadí podle toho jestli je scrollY víc jak 30 -->
-    <script is:inline>
-      var scrollPosition = window.scrollY;
-      var navbar = document.getElementById("menuBg");
+<header class="fixed top-10 z-20 flex w-screen justify-center">
+	<div id="menuBg" class="absolute h-16 w-11/12 max-w-7xl rounded-full">
+		<script is:inline>
+			var scrollPosition = window.scrollY
+			var navbar = document.getElementById('menuBg')
 
-      window.addEventListener("scroll", function () {
-        scrollPosition = window.scrollY;
+			window.addEventListener('scroll', function () {
+				scrollPosition = window.scrollY
 
-        if (scrollPosition >= 30) {
-          navbar.classList.remove("dynamic");
-          navbar.classList.add("active-dynamic");
-        } else if (scrollPosition <= 30) {
-          navbar.classList.remove("active-dynamic");
-          navbar.classList.add("dynamic");
-        }
-      });
-    </script>
-  </div>
-  <div class="grid grid-cols-5 items-center w-11/12 max-w-7xl h-16 z-40">
-    <Astronav>
-      <div id="button" class="flex lg:hidden">
-        <MenuIcon class="w-6 h-6 ml-10 text-white" />
-      </div>
-      <!-- Jestli je navmenu scrolly 30 nedělá nic. Jestli ano, tak vypíná při kliknutí pozadí navmenu a po dalším kliknutí znovu zapne -->
-      <script is:inline>
-        var scrollPosition = window.scrollY;
-        const myDiv = document.querySelector("#button");
-        let isActive = true;
-        myDiv.addEventListener("click", function () {
-          var element = document.getElementById("menuBg");
-          if (scrollPosition <= 30) {
-          } else if (isActive) {
-            element.classList.remove("active-dynamic");
-            element.classList.add("dynamic");
-            isActive = false;
-          } else {
-            element.classList.remove("dynamic");
-            element.classList.add("active-dynamic");
-            isActive = true;
-          }
-        });
-      </script>
-      <MenuItems
-        class="hidden justify-center items-center lg:ml-32 lg:gap-x-7 xl:gap-9 lg:text-lg font-bold lg:flex lg:flex-row max-lg:absolute max-lg:top-0 max-lg:rounded-3xl -z-10 max-lg:w-11/12 max-lg:bg-zinc-700 max-lg:bg-opacity-50 max-lg:backdrop-blur-sm"
-      >
-        <a
-          href="#about"
-          class="flex text-white focus-visible:border max-lg:justify-center max-lg:mt-24 max-lg:my-6"
-          >About</a
-        >
-
-        <a
-          href="#projects"
-          class="flex text-white visited:border-b max-lg:justify-center max-lg:my-6"
-          >Projects</a
-        >
-
-        <a
-          href="#services"
-          class="flex text-white visited:border-b max-lg:justify-center max-lg:my-6"
-          >Services</a
-        >
-
-        <a
-          href="#contact"
-          class="flex text-white visited:border-b max-lg:justify-center max-lg:my-6 md:hidden"
-          >Hire me</a
-        >
-      </MenuItems>
-    </Astronav>
-    <div class="flex col-span-3 justify-center items-center">
-      <a
-        href="#main"
-        class="hover:animate-jump animate-ease-in-out animate-normal animate-fill-backwards"
-      >
-        <Image
-          loading={"eager"}
-          src={BartyspaceLogo}
-          class="w-full h-14"
-          alt="BartyspaceLabs"
-        />
-      </a>
-    </div>
-    <div class="flex items-center justify-end mr-8 lg:mr-10 mt-2 mb-2">
-      <a href="#contact">
-        <RoundedButton />
-      </a>
-    </div>
-  </div>
+				if (scrollPosition >= 30) {
+					navbar.classList.remove('dynamic')
+					navbar.classList.add('active-dynamic')
+				} else {
+					navbar.classList.remove('active-dynamic')
+					navbar.classList.add('dynamic')
+				}
+			})
+		</script>
+	</div>
+	<div class="z-40 grid h-16 w-11/12 max-w-7xl grid-cols-5 items-center">
+		<Astronav>
+			<div id="button" class="flex lg:hidden">
+				<MenuIcon class="ml-10 h-6 w-6 text-white" />
+			</div>
+			<script is:inline>
+				const myDiv = document.querySelector('#button')
+				let isActive = true
+				myDiv.addEventListener('click', function () {
+					var element = document.getElementById('menuBg')
+					if (scrollPosition <= 30) {
+					} else if (isActive) {
+						element.classList.remove('active-dynamic')
+						element.classList.add('dynamic')
+						isActive = false
+					} else {
+						element.classList.remove('dynamic')
+						element.classList.add('active-dynamic')
+						isActive = true
+					}
+				})
+			</script>
+			<MenuItems
+				class="-z-10 hidden font-bold max-lg:absolute max-lg:top-0 max-lg:w-11/12 max-lg:rounded-3xl max-lg:bg-zinc-700 max-lg:bg-opacity-50 max-lg:backdrop-blur-sm lg:ml-12 lg:flex lg:gap-x-7 lg:text-lg xl:gap-9"
+			>
+				<a href="#about" class="flex text-white max-lg:my-6 max-lg:mt-24 max-lg:justify-center">About</a>
+				<a href="#projects" class="flex text-white max-lg:my-6 max-lg:justify-center">Projects</a>
+				<a href="#services" class="flex text-white max-lg:my-6 max-lg:justify-center">Services</a>
+				<a href="#contact" class="flex text-white max-lg:my-6 max-lg:justify-center md:hidden">Hire me</a>
+			</MenuItems>
+		</Astronav>
+		<div class="col-span-3 flex items-center justify-center">
+			<a href="#main" class="animate-normal animate-fill-backwards animate-ease-in-out hover:animate-jump">
+				<Image loading={'eager'} src={BartyspaceLogo} class="h-14 w-full" alt="BartyspaceLabs" />
+			</a>
+		</div>
+		<div class="mr-8 flex items-center justify-end lg:mr-10">
+			<a href="#contact">
+				<RoundedButton />
+			</a>
+		</div>
+	</div>
 </header>
