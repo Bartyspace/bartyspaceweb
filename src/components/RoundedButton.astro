@@ -1,6 +1,13 @@
+---
+import '../styles/global.css'
+---
+
 <button
-  type="button"
-  class="hidden md:flex justify-center border-2 font-bold lg:text-lg rounded-full lg:py-1.5 py-1 px-4 text-white hover:bg-white hover:text-black"
+	type="button"
+	class="relative flex transform-gpu items-center justify-center overflow-hidden rounded-full border-2 px-4 py-1 font-bold text-white transition-transform hover:animate-jump md:flex lg:py-1.5 lg:text-lg"
 >
-  Hire me
+	<span class="relative z-10">Hire me</span>
+	<span class="absolute inset-0 overflow-hidden">
+		<span class="animate-shine to-transpatent absolute left-0 top-0 h-8 w-full bg-gradient-to-t from-transparent via-white opacity-0"></span>
+	</span>
 </button>

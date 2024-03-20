@@ -39,3 +39,23 @@ html {
   left: 0px !important;
   pointer-events: none;
 }
+
+@keyframes shine {
+  0% {
+    opacity: 0.25;
+    transform: translateX(-100%) rotate(45deg); 
+  }
+
+  10% {
+    opacity: 0.25;
+    transform: translateX(100%) rotate(45deg); 
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(1000%) rotate(45deg);
+  }
+}
+
+.animate-shine {
+  animation: shine 10s infinite ease-in-out;
+}
