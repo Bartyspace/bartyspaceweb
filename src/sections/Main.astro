@@ -1,21 +1,47 @@
 ---
 import { Image } from 'astro:assets'
 import favicon from '../../public/favicon.svg'
-import GridBg from '../../public/GridBg.png'
 import '../styles/global.css'
+import grid from '../../public/GridBackground.png'
 ---
+
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', () => {
+		const gridMoveDiv = document.getElementById('gridmove')
+		const screenWidth = window.innerWidth
+		const screenHeight = window.innerHeight
+		const divWidth = gridMoveDiv.offsetWidth
+		const divHeight = gridMoveDiv.offsetHeight
+
+		// Vypočítáme ofset pro horizontální a vertikální zarovnání uprostřed stránky
+		const horizontalOffset = (screenWidth - divWidth) / 2
+		const verticalOffset = (screenHeight - divHeight) / 2
+
+		gridMoveDiv.style.top = `${verticalOffset}px` // Nastavíme nový vertikální ofset
+		gridMoveDiv.style.left = `${horizontalOffset}px` // Nastavíme nový horizontální ofset
+
+		document.addEventListener('mousemove', (event) => {
+			const xOffset = (event.clientX - horizontalOffset) / screenWidth
+			const yOffset = (event.clientY - verticalOffset) / screenHeight
+			gridMoveDiv.style.transform = `translate(${xOffset * 20}px, ${yOffset * 20}px)` // Posun podle pozice kurzoru
+		})
+	})
+</script>
 
 <section
 	id="main"
-	class="flex h-screen w-screen animate-fade-down items-center justify-center bg-gradient-to-b from-sky-600 from-40% to-indigo-950 bg-no-repeat animate-ease-out"
+	class="flex h-screen w-screen animate-fade-down items-center justify-center bg-gradient-to-b from-sky-600 from-40% to-indigo-950 animate-ease-out"
 >
-	<Image loading={'eager'} src={GridBg} alt="Grid bg" />
+	<div id="gridmove" class="absolute">
+		<Image loading={'eager'} src={grid} class="h-screen w-screen" alt="Grid background" />
+	</div>
 	<div class="container absolute -left-64">
-		<Image loading={'eager'} src={favicon} class="opacity-70" alt="BartyspaceLabs" />
+		<Image loading={'eager'} src={favicon} class="opacity-70" alt="Bartyspace wolf" />
 	</div>
 
-	<div class="flex flex-col items-start justify-center py-28">
-		<h1 class="text-start text-7xl font-bold text-white max-md:text-5xl">
+	<div class="relative flex flex-col items-start justify-center overflow-hidden py-28">
+		<div class="absolute z-10 h-32 w-32"></div>
+		<h1 class="relative z-20 text-start text-7xl font-bold text-white max-md:text-5xl">
 			Hi,<br />
 			I'm <span class="font-extrabold">Bartyspace</span><br />
 			a web designer
