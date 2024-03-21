@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import favicon from '../../public/favicon.svg'
+import GridBg from '../../public/GridBg.png'
 import '../styles/global.css'
 ---
 
@@ -8,6 +9,7 @@ import '../styles/global.css'
 	id="main"
 	class="flex h-screen w-screen animate-fade-down items-center justify-center bg-gradient-to-b from-sky-600 from-40% to-indigo-950 bg-no-repeat animate-ease-out"
 >
+	<Image loading={'eager'} src={GridBg} alt="Grid bg" />
 	<div class="container absolute -left-64">
 		<Image loading={'eager'} src={favicon} class="opacity-70" alt="BartyspaceLabs" />
 	</div>

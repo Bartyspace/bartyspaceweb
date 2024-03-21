@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.8",
+    "@astrojs/check": "^0.5.9",
     "@astrojs/react": "^3.1.0",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/ts-plugin": "^1.6.0",
@@ -19,7 +19,7 @@
     "@tsparticles/react": "^3.0.0",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.22",
-    "astro": "^4.5.2",
+    "astro": "^4.5.8",
     "astro-icon": "^1.1.0",
     "astro-navbar": "^2.3.1",
     "astro-particles": "^2.10.0",
