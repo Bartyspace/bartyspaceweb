@@ -62,3 +62,15 @@ html {
 .animate-shine {
   animation: shine 10s infinite ease-in-out;
 }
+.background-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw; /* Šířka obrazovky */
+  height: 100vh; /* Výška obrazovky */
+  border-radius: 50%; /* Vytvoří kruh */
+  background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+  opacity: 0.7; /* Průhlednost gradientu */
+  z-index: -1; /* Posunutí pod obsah */
+}
