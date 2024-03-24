@@ -1,41 +1,23 @@
 ---
-import { Image } from "astro:assets";
-import MyPhoto from "../../public/MyPhoto.svg";
-import "../styles/global.css";
+import { Image } from 'astro:assets'
+import MyPhoto from '../../public/MyPhoto.svg'
+import '../styles/global.css'
 ---
 
-<section id="about" class="z-20 bg-indigo-950 bg-no-repeat">
+<section id="about" class="z-20 w-screen bg-indigo-950 bg-no-repeat min-h-screen">
 	<div class="flex flex-col lg:grid lg:grid-cols-2">
-		<Image
-			src={MyPhoto}
-			alt="Me in nature"
-			loading={"lazy"}
-			class="h-auto w-full object-cover object-center lg:h-screen"
-		/>
-		<div
-			class="mx-auto flex max-w-3xl flex-col justify-center max-lg:mt-10 max-lg:max-w-xl"
-		>
-			<h2
-				class="container w-52 py-2 text-center text-3xl font-semibold text-white"
-			>
-				About me
-			</h2>
+		<Image src={MyPhoto} alt="Me in nature" loading={'lazy'} class="h-auto w-full object-cover object-center lg:h-screen" />
+		<div class="mx-auto flex max-w-3xl flex-col justify-center max-lg:mt-8 max-lg:max-w-xl">
+			<h2 class="container w-52 py-2 text-center text-3xl font-semibold text-white">About me</h2>
 
 			<div class="container items-center justify-center pt-10">
-				<p
-					class="mx-40 text-center text-lg text-white max-lg:mx-5 lg:mx-10"
-				>
-					Passionate web developer from Czechia, specializing in
-					modern, user-friendly websites. I constantly enhance my
-					skills to stay current with the latest web development
-					trends. Experienced in various technologies and frameworks,
-					I'm committed to ensuring the success of your web projects.
-					Let me know how I can assist you with your web needs!
+				<p class="mx-40 text-center text-lg text-white max-lg:mx-5 lg:mx-10">
+					Passionate web developer from Czechia, specializing in modern, user-friendly websites. I constantly enhance my skills to stay
+					current with the latest web development trends. Experienced in various technologies and frameworks, I'm committed to ensuring the
+					success of your web projects. Let me know how I can assist you with your web needs!
 				</p>
 				<div class="pb-10 pt-16 text-center">
-					<h3
-						class="bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-400 bg-clip-text text-2xl font-semibold text-transparent"
-					>
+					<h3 class="bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-400 bg-clip-text text-2xl font-semibold text-transparent">
 						Explored techs
 					</h3>
 					<ul class="text-lg text-white">
@@ -59,7 +41,7 @@ import "../styles/global.css";
 			</div>
 		</div>
 	</div>
-	<hr
-		class="absolute mt-20 h-[2.3px] w-2/3 translate-x-1/4 border-none bg-gradient-to-r from-transparent via-gray-500 to-transparent"
-	/>
 </section>
+<div class="flex h-32 w-screen items-center bg-indigo-950">
+	<hr class="h-[2px] w-2/3 translate-x-1/4 border-none bg-gradient-to-r from-transparent via-gray-500 to-transparent" />
+</div>
