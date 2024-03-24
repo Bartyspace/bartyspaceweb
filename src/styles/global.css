@@ -2,14 +2,25 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import url("https://fonts.cdnfonts.com/css/tt-lakes-neue-trial");
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
 body {
   font-family: "TT Lakes Neue Trial";
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
-  overflow-x: hidden;
+ 
 }
+
 .header {
   font-weight: bold;
   font-size: large;
@@ -24,9 +35,10 @@ html {
   scroll-behavior: smooth !important;
 }
 .active-dynamic {
-  background-color: rgba(82,82,82,0.6);
+  background: rgba(38, 37, 64, 0.41);
   -webkit-backdrop-filter: blur(3px) saturate(100%);
   backdrop-filter: blur(3px) saturate(100%);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 1px;
   border-style: solid;
   border-color: rgba(255,255,255, 0.4);
@@ -67,10 +79,11 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100vw; /* Šířka obrazovky */
-  height: 100vh; /* Výška obrazovky */
-  border-radius: 50%; /* Vytvoří kruh */
-  background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
-  opacity: 0.7; /* Průhlednost gradientu */
-  z-index: -1; /* Posunutí pod obsah */
+  width: 100vw;
+  height: 100vh;
+  border-radius: 50%;
+  filter: blur(20px);
+  background: radial-gradient(at 50% 50%, rgba(2, 132, 199, 0.6) 0%, rgba(255, 255, 255, 0) 30%), linear-gradient(to bottom, rgba(2, 132, 199, 0.8) 40%, rgba(30, 27, 75, 0.8));
+  opacity: 1; 
+  z-index: 10;
 }

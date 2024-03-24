@@ -13,8 +13,8 @@ import grid from '../../public/GridBackground.png'
 		const divWidth = gridMoveDiv.offsetWidth
 		const divHeight = gridMoveDiv.offsetHeight
 
-		const horizontalOffset = (screenWidth - divWidth) / 2
-		const verticalOffset = (screenHeight - divHeight) / 2
+		const horizontalOffset = (screenWidth - divWidth) / 10
+		const verticalOffset = (screenHeight - divHeight) / 10
 
 		gridMoveDiv.style.transform = `translate(${horizontalOffset}px, ${verticalOffset}px)`
 
@@ -33,9 +33,14 @@ import grid from '../../public/GridBackground.png'
 >
 	<div class="background-circle"></div>
 	<div id="gridmove" class="absolute">
-		<Image loading={'eager'} src={grid} class="h-screen w-screen border-b-4 border-white border-opacity-30" alt="Grid background" />
+		<Image
+			loading={'eager'}
+			src={grid}
+			class="h-screen w-[calc(100vw+100px)] border-b-4 border-t-4 border-white border-opacity-30"
+			alt="Grid background"
+		/>
 	</div>
-	<div class="container absolute -left-64">
+	<div class="container absolute -left-64 z-10">
 		<Image loading={'eager'} src={favicon} class="z-20 opacity-70" alt="Bartyspace wolf" />
 	</div>
 
