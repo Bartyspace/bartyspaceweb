@@ -4,11 +4,72 @@ import '../styles/global.css'
 import Project1 from '../../public/352cb5.png'
 ---
 
-<section id="projects" class="min-h-screen w-screen bg-indigo-950">
+<section id="projects" class="w-screen bg-indigo-950 lg:max-h-screen">
 	<h2 class="container w-52 pt-6 text-center text-3xl font-semibold text-white">My projects</h2>
-	<div class="flex flex-col items-center justify-center pt-24 xl:pt-56">
+
+	<div class="carousel">
+		<ul class="carousel__list">
+			<li class="carousel__item" data-pos="-2">1</li>
+			<li class="carousel__item" data-pos="-1">2</li>
+			<li class="carousel__item" data-pos="0">3</li>
+			<li class="carousel__item" data-pos="1">4</li>
+			<li class="carousel__item" data-pos="2">5</li>
+		</ul>
+	</div>
+	<script is:inline>
+		const state = {}
+		const carouselList = document.querySelector('.carousel__list')
+		const carouselItems = document.querySelectorAll('.carousel__item')
+		const elems = Array.from(carouselItems)
+
+		carouselList.addEventListener('click', function (event) {
+			var newActive = event.target
+			var isItem = newActive.closest('.carousel__item')
+
+			if (!isItem || newActive.classList.contains('carousel__item_active')) {
+				return
+			}
+
+			update(newActive)
+		})
+
+		const update = function (newActive) {
+			const newActivePos = newActive.dataset.pos
+
+			const current = elems.find((elem) => elem.dataset.pos == 0)
+			const prev = elems.find((elem) => elem.dataset.pos == -1)
+			const next = elems.find((elem) => elem.dataset.pos == 1)
+			const first = elems.find((elem) => elem.dataset.pos == -2)
+			const last = elems.find((elem) => elem.dataset.pos == 2)
+
+			current.classList.remove('carousel__item_active')
+
+			;[current, prev, next, first, last].forEach((item) => {
+				var itemPos = item.dataset.pos
+
+				item.dataset.pos = getPos(itemPos, newActivePos)
+			})
+		}
+
+		const getPos = function (current, active) {
+			const diff = current - active
+
+			if (Math.abs(current - active) > 2) {
+				return -current
+			}
+
+			return diff
+		}
+	</script>
+</section>
+
+<div class="flex h-32 w-screen items-center bg-indigo-950">
+	<hr class="h-[2px] w-2/3 translate-x-1/4 border-none bg-gradient-to-r from-transparent via-gray-500 to-transparent" />
+</div>
+<!--
+		<div class="flex flex-col items-center justify-center pt-24 xl:pt-56">
 		<div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 sm:gap-x-10 lg:grid-cols-2 lg:gap-x-28 xl:grid-cols-4 xl:gap-x-14">
-			<div class="max-w-72 rounded-lg border border-opacity-40 bg-transparent p-4">
+			<div class="max-w-72 rounded-lg border bg-zinc-700 bg-opacity-20 p-4 transition-all hover:scale-110">
 				<Image src={Project1} alt="Placeholder Image" class="h-48 w-full rounded-md object-cover" />
 				<div class="px-1 py-4">
 					<div
@@ -22,7 +83,7 @@ import Project1 from '../../public/352cb5.png'
 					<a href="#" class="text-sky-400 hover:text-white">Look at me</a>
 				</div>
 			</div>
-			<div class="max-w-72 rounded-lg border bg-transparent p-4">
+			<div class="max-w-72 rounded-lg border bg-zinc-700 bg-opacity-20 p-4 transition-all hover:scale-110">
 				<Image src={Project1} alt="Placeholder Image" class="h-48 w-full rounded-md object-cover" />
 				<div class="px-1 py-4">
 					<div
@@ -36,7 +97,7 @@ import Project1 from '../../public/352cb5.png'
 					<a href="#" class="text-sky-400 hover:text-white">Look at me</a>
 				</div>
 			</div>
-			<div class="max-w-72 rounded-lg border bg-transparent p-4">
+			<div class="max-w-72 rounded-lg border bg-zinc-700 bg-opacity-20 p-4 transition-all hover:scale-110">
 				<Image src={Project1} alt="Placeholder Image" class="h-48 w-full rounded-md object-cover" />
 				<div class="px-1 py-4">
 					<div
@@ -50,7 +111,7 @@ import Project1 from '../../public/352cb5.png'
 					<a href="#" class="text-sky-400 hover:text-white">Look at me</a>
 				</div>
 			</div>
-			<div class="max-w-72 rounded-lg border bg-transparent p-4">
+			<div class="max-w-72 rounded-lg border bg-zinc-700 bg-opacity-20 p-4 transition-all hover:scale-110">
 				<Image src={Project1} alt="Placeholder Image" class="h-48 w-full rounded-md object-cover" />
 				<div class="px-1 py-4">
 					<div
@@ -66,7 +127,4 @@ import Project1 from '../../public/352cb5.png'
 			</div>
 		</div>
 	</div>
-</section>
-<div class="flex h-32 w-screen items-center bg-indigo-950">
-	<hr class="h-[2px] w-2/3 translate-x-1/4 border-none bg-gradient-to-r from-transparent via-gray-500 to-transparent" />
-</div>
+ -->
