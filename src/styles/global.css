@@ -102,23 +102,21 @@ html {
 }
 
 .carousel__wrapper {
-  height: 700px;
+  height: 800px;
   perspective: 300px;
 }
 
 .carousel__item {
   display: flex;
   align-items: center;
-  justify-content: center;
   position: absolute;
-  height: 400px;
   transition: all.3s ease-in;
   background: rgba(38, 37, 64, 0.41);
   -webkit-backdrop-filter: blur(3px) saturate(100%);
   backdrop-filter: blur(3px) saturate(100%);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border-color: rgba(255, 255, 255, 0.4);
-  width: calc(25% - 20px); /* Adjust item width for smaller screens */
+  width: 25%; /* Adjust item width for smaller screens */
   margin: 10px; /* Add margin between items */
 }
 
@@ -161,7 +159,7 @@ html {
 
 @media (min-width: 1024px) {
   .carousel__item {
-    width: calc(50% - 40px); /* Adjust item width for medium screens */
+    width: 25%; /* Adjust item width for medium screens */
   }
   .carousel__item[data-pos="-2"],
   .carousel__item[data-pos="2"] {
@@ -172,7 +170,7 @@ html {
 }
 @media (max-width: 768px) {
   .carousel__item {
-    width: calc(50% - 40px); /* Adjust item width for medium screens */
+    width: 40%; /* Adjust item width for medium screens */
   }
  
   
@@ -180,6 +178,6 @@ html {
 
 @media (max-width: 425px) {
   .carousel__item {
-    width: calc(50% - 30px); /* Adjust item width for small screens */
+    width: 40%; /* Adjust item width for small screens */
   }
 }
