@@ -3,41 +3,40 @@ import { Image } from 'astro:assets'
 import favicon from '../../public/favicon.svg'
 import '../styles/global.css'
 import grid from '../../public/GridBackground.png'
-import { isCallChain } from 'typescript'
 ---
 
-<script is:inline>
+<script is:inline data-astro-rerun>
 	document.addEventListener('DOMContentLoaded', () => {
-		const gridMoveDiv = document.getElementById('gridmove')
-		const screenWidth = window.innerWidth
-		const screenHeight = window.innerHeight
-		const divWidth = gridMoveDiv.offsetWidth
-		const divHeight = gridMoveDiv.offsetHeight
+		// Check if screen width is greater than 1024px
+		if (window.innerWidth > 1024) {
+			const gridMoveDiv = document.getElementById('gridmove')
+			const screenWidth = window.innerWidth
+			const screenHeight = window.innerHeight
+			const divWidth = gridMoveDiv.offsetWidth
+			const divHeight = gridMoveDiv.offsetHeight
 
-		const horizontalOffset = (screenWidth - divWidth) / 10
-		const verticalOffset = (screenHeight - divHeight) / 10
+			const horizontalOffset = (screenWidth - divWidth) / 10
+			const verticalOffset = (screenHeight - divHeight) / 10
 
-		gridMoveDiv.style.transform = `translate(${horizontalOffset}px, ${verticalOffset}px)`
+			gridMoveDiv.style.transform = `translate(${horizontalOffset}px, ${verticalOffset}px)`
 
-		document.addEventListener('mousemove', (event) => {
-			const xOffset = (event.clientX - screenWidth / 2) / screenWidth
-			// Nastavíme yOffset na 0, aby nedocházelo k posunu vertikálně
-			const yOffset = 0
-			gridMoveDiv.style.transform = `translate(${horizontalOffset + xOffset * 20}px, ${verticalOffset + yOffset * 20}px)`
-		})
+			document.addEventListener('mousemove', (event) => {
+				const xOffset = (event.clientX - screenWidth / 2) / screenWidth
+				// Set yOffset to 0 to prevent vertical movement
+				const yOffset = 0
+				gridMoveDiv.style.transform = `translate(${horizontalOffset + xOffset * 20}px, ${verticalOffset + yOffset * 20}px)`
+			})
+		}
 	})
 </script>
 
-<section
-	id="main"
-	class="flex h-screen w-screen animate-fade-down items-center justify-center bg-gradient-to-b from-sky-600 from-40% to-indigo-950 animate-ease-out"
->
+<section id="main" class="flex h-screen w-screen items-center justify-center bg-gradient-to-b from-sky-600 from-40% to-indigo-950">
 	<div class="background-circle"></div>
 	<div id="gridmove" class="absolute flex items-center justify-center">
 		<Image
 			loading={'eager'}
 			src={grid}
-			class="z-0 max-h-screen w-screen scale-x-125 border-b-4 border-t-4 border-white border-opacity-30"
+			class="xborder-t-4 z-0 h-screen border-b-4 border-white border-opacity-20 max-lg:object-cover xl:scale-x-125 xl:border-b-[5px] xl:border-t-[5px]"
 			alt="Grid background"
 		/>
 	</div>

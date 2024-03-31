@@ -1,6 +1,6 @@
 ---
-import ResponsiveNav from '../components/layout/ResponsiveNav.astro'
-import Head from '../components/layout/Head.astro'
+import ResponsiveNav from '../elements/ResponsiveNav.astro'
+import HTML from '../elements/HTML.astro'
 import LandingPage from '../sections/Main.astro'
 import About from '../sections/About.astro'
 import Projects from '../sections/Projects.astro'
@@ -8,11 +8,10 @@ import Services from '../sections/Services.astro'
 import '../styles/global.css'
 ---
 
-<Head title="Bartyspace Labs" />
-<body>
+<HTML title="Bartyspace Labs">
 	<ResponsiveNav />
 	<LandingPage />
 	<About />
 	<Projects />
 	<Services />
-</body>
+</HTML>

@@ -1,12 +1,12 @@
 ---
 import { Astronav, MenuItems, MenuIcon } from 'astro-navbar'
 import { Image } from 'astro:assets'
-import BartyspaceLogo from '../../../public/Bartyspace Labs transparet bg.svg'
-import RoundedButton from '../RoundedButton.astro'
-import '../../styles/global.css'
+import BartyspaceLogo from '../../public/Bartyspace Labs transparet bg.svg'
+import RoundedButton from '../components/RoundedButton.astro'
+import '../styles/global.css'
 ---
 
-<header class="fixed top-10 z-20 flex w-screen items-center justify-center">
+<header class="fixed top-10 z-30 flex w-screen items-center justify-center">
 	<div id="menuBg" class="absolute h-16 w-screen max-w-7xl rounded-full md:w-11/12">
 		<script is:inline>
 			var scrollPosition = window.scrollY
@@ -52,7 +52,7 @@ import '../../styles/global.css'
 			>
 				<a href="#about" class="flex text-white hover:border-b max-lg:my-6 max-lg:mt-24 max-lg:justify-center">About</a>
 				<a href="#projects" class="flex text-white hover:border-b max-lg:my-6 max-lg:justify-center">Projects</a>
-				<a href="#services" class="flex text-white hover:border-b max-lg:my-6 max-lg:justify-center">Services</a>
+				<!-- <a href="#services" class="flex text-white hover:border-b max-lg:my-6 max-lg:justify-center">Services</a>-->
 				<a href="#contact" class="flex text-white hover:border-b max-lg:my-6 max-lg:justify-center md:hidden">Hire me</a>
 			</MenuItems>
 		</Astronav>

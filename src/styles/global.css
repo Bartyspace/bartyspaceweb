@@ -11,6 +11,8 @@
 html {
   overflow: scroll;
   overflow-x: hidden;
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
 }
 ::-webkit-scrollbar {
   width: 0;  /* Remove scrollbar space */
@@ -34,10 +36,7 @@ h1 {
   text-align: center;
   line-height: 1.2;
 }
-html {
-  --scroll-behavior: smooth !important;
-  scroll-behavior: smooth !important;
-}
+
 .active-dynamic {
   background: rgba(38, 37, 64, 0.41);
   -webkit-backdrop-filter: blur(3px) saturate(100%);
@@ -102,7 +101,6 @@ html {
 }
 
 .carousel__wrapper {
-  height: 800px;
   perspective: 300px;
 }
 
@@ -116,8 +114,8 @@ html {
   backdrop-filter: blur(3px) saturate(100%);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border-color: rgba(255, 255, 255, 0.4);
-  width: 25%; /* Adjust item width for smaller screens */
   margin: 10px; /* Add margin between items */
+  width: 25%;
 }
 
 
@@ -157,9 +155,20 @@ html {
   z-index: 3;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 2560px) {
   .carousel__item {
-    width: 25%; /* Adjust item width for medium screens */
+    width: 10%;   
+  }
+  .carousel__item[data-pos="-2"],
+  .carousel__item[data-pos="2"] {
+    opacity: 0.4;
+    filter: blur(3px) grayscale(20%);
+  }
+  
+}
+@media (min-width: 1023px) {
+  .carousel__item {
+    width: 30%; 
   }
   .carousel__item[data-pos="-2"],
   .carousel__item[data-pos="2"] {
@@ -170,14 +179,22 @@ html {
 }
 @media (max-width: 768px) {
   .carousel__item {
-    width: 40%; /* Adjust item width for medium screens */
+    width: 40%;   
   }
- 
-  
 }
 
 @media (max-width: 425px) {
   .carousel__item {
     width: 40%; /* Adjust item width for small screens */
+  }
+}
+@keyframes slide-in {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 1;
   }
 }
