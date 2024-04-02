@@ -1,7 +1,11 @@
 ---
-const { title } = Astro.props
 import { ViewTransitions } from 'astro:transitions'
 import GoogleAnalytics from '../components/GoogleAnalytics.astro'
+import { SEO, type Props as SEOProps } from 'astro-seo'
+const { seo } = Astro.props
+interface Props {
+	seo?: SEOProps
+}
 ---
 
 <html lang="en">
@@ -9,11 +13,10 @@ import GoogleAnalytics from '../components/GoogleAnalytics.astro'
 		<GoogleAnalytics />
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content="{Astro.generator}" />
-		<title>{title}</title>
 		<ViewTransitions />
+		<SEO {...seo} title={seo?.title ?? 'Bartyspace Labs'} description={seo?.description ?? 'Bartyspace Labs portfolio'} />
 	</head>
 	<body>
 		<slot />
