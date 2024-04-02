@@ -4,7 +4,8 @@
     "css.customData": [".vscode/css_custom_data.json"],
     "files.associations": {
         "*.css": "tailwindcss"
-      },
+    },
+    "material-icon-theme.activeIconPack": "vue",
   }
 
  

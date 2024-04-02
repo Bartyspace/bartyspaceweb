@@ -2,18 +2,18 @@
 import '../styles/global.css'
 ---
 
-<section id="contacts" class="bg-indigo-950 py-10">
+<section id="contacts" class="bg-indigo-950 pb-20">
 	<div class="container mx-auto text-center text-white">
-		<h2 class="mb-20 text-3xl font-bold">Hire me</h2>
-		<p class="mb-12 text-lg">
-			Interested in my work? Feel free to contact me!<br /> Whether you need help with a project or have any questions regarding what I'm working
-			on, don't hesitate to reach out.
+		<h2 class="mb-24 text-3xl font-bold">Hire me</h2>
+		<p class="container mb-12 w-[500px] text-lg">
+			Interested in my work? Feel free to contact me! Whether you need help with a project or have any questions regarding what I'm working on,
+			don't hesitate to reach out.
 		</p>
 		<div class="flex justify-center">
 			<div class="w-full sm:w-8/12 md:w-6/12 lg:w-4/12">
-				<form action="https://formspree.io/f/mgegnngg" method="POST">
-					<div class="mb-4">
-						<label for="name" class="mb-2 block font-bold text-white">Name:</label>
+				<form action="https://formspree.io/f/mgegnngg" method="POST" class="space-y-6">
+					<div>
+						<label for="name" class="mb-3 block font-bold text-white">Name:</label>
 						<input
 							type="text"
 							id="name"
@@ -22,8 +22,8 @@ import '../styles/global.css'
 							required
 						/>
 					</div>
-					<div class="mb-4">
-						<label for="email" class="mb-2 block font-bold text-white">Email:</label>
+					<div>
+						<label for="email" class="mb-3 block font-bold text-white">Email:</label>
 						<input
 							type="email"
 							id="email"
@@ -32,8 +32,8 @@ import '../styles/global.css'
 							required
 						/>
 					</div>
-					<div class="mb-4">
-						<label for="message" class="mb-2 block font-bold text-white">Message:</label>
+					<div>
+						<label for="message" class="mb-3 block font-bold text-white">Message:</label>
 						<textarea
 							name="message"
 							id="message"
