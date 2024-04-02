@@ -8,7 +8,7 @@ import svelte from "@astrojs/svelte";
 export default defineConfig({
   // Enable many frameworks to support all different kinds of components.
   // No `include` is needed if you are only using a single JSX framework!
-  site: 'https://snazzy-capybara-a7228d.netlify.app/',
+  site: 'https://bartyspacelabs.netlify.app/',
   integrations: [tailwind(), react(), partytown({
     config: {
       forward: ["dataLayer.push"]
