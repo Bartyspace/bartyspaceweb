@@ -1,6 +1,5 @@
 ---
 import { ViewTransitions } from 'astro:transitions'
-import GoogleAnalytics from '../components/GoogleAnalytics.astro'
 import { SEO, type Props as SEOProps } from 'astro-seo'
 const { seo } = Astro.props
 interface Props {
@@ -10,7 +9,6 @@ interface Props {
 
 <html lang="en">
 	<head>
-		<GoogleAnalytics />
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
