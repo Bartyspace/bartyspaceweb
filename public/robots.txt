@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+
+Sitemap: https://bartyspacelabs.netlify.app/sitemap-index.xml

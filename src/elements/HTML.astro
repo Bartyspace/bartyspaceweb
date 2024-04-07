@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
+import GoogleTag from '../components/GoogleAnalytics.astro'
 import { SEO, type Props as SEOProps } from 'astro-seo'
 const { seo } = Astro.props
 interface Props {
@@ -9,12 +9,12 @@ interface Props {
 
 <html lang="en">
 	<head>
+		<GoogleTag />
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content="{Astro.generator}" />
-		<ViewTransitions />
 		<SEO {...seo} title={seo?.title ?? 'Bartyspace Labs'} description={seo?.description ?? 'Bartyspace Labs Portfolio'} />
 	</head>
 	<body>
