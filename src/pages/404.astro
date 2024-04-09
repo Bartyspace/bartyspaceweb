@@ -1,0 +1,22 @@
+---
+import HTML from '../elements/HTML.astro'
+import '../styles/global.css'
+import { SEO, type Props as SEOProps } from 'astro-seo'
+const { seo } = Astro.props
+interface Props {
+	seo?: SEOProps
+}
+---
+<HTML seo={{ title: '404 Page not found', description: '404 page for site bartyspacelabs.netlify.app', }}>
+    <section class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="container mx-auto px-4">
+        <div class="max-w-md mx-auto text-center">
+            <h1 class="text-6xl font-semibold text-blue-600">404</h1>
+            <p class="text-2xl font-light text-gray-800 mt-3">Page not found</p>
+            <p class="mt-4 text-gray-600">
+                We're sorry, but the page you're trying to view doesn't exist or has been moved.</p>
+            <a href="#main" class="inline-block mt-8 bg-blue-600 text-white px-5 py-3 rounded shadow-lg hover:bg-blue-700 transition-colors">Vrátit se na hlavní stránku</a>
+        </div>
+    </div>
+</section>
+</HTML>
