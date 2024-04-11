@@ -1,109 +1,140 @@
 ---
-import HTML from '../elements/HTML.astro'
-import '../styles/global.css'
-import { SEO, type Props as SEOProps } from 'astro-seo'
-const { seo } = Astro.props
+import HTML from '../elements/HTML.astro';
+import '../styles/global.css';
+import { SEO, type Props as SEOProps } from 'astro-seo';
+const { seo } = Astro.props;
 interface Props {
-	seo?: SEOProps
+  seo?: SEOProps;
 }
 ---
 
-<HTML seo={{ title: 'Privacy Policy', description: 'This Privacy Policy describes how we collect, use, and share your personal information when you visit our website.', }}>
-	<div class="bg-gray-800 pb-16 pt-10 text-gray-200 space-y-16">
-		<h1 class="flex items-center justify-center text-3xl font-bold">Privacy Policy</h1>
-		<div class="container mx-auto mb-16 w-1/2 space-y-8">
-			<p class="text-right text-sm italic">Effective date: 02.04.2024</p>
-			<p>
-				At Bartyspace Labs, we are committed to protecting your privacy. This Privacy Policy describes how we collect, use, and share your
-				personal information when you visit our website at bartyspacelabs.netlify.app (the "Site").
-			</p>
+<HTML
+  seo={{
+    title: 'Privacy Policy',
+    description:
+      'This Privacy Policy describes how we collect, use, and share your personal information when you visit our website.',
+  }}
+>
+  <div class="bg-gray-800 pb-16 pt-10 text-gray-200 space-y-16">
+    <h1 class="flex items-center justify-center text-3xl font-bold">
+      Privacy Policy
+    </h1>
+    <div class="container mx-auto mb-16 w-1/2 space-y-8">
+      <p class="text-right text-sm italic">Effective date: 02.04.2024</p>
+      <p>
+        At Bartyspace Labs, we are committed to protecting your privacy. This
+        Privacy Policy describes how we collect, use, and share your personal
+        information when you visit our website at bartyspacelabs.netlify.app
+        (the "Site").
+      </p>
 
-			<h3 class="text-xl font-semibold">Information Collection and Use</h3>
+      <h3 class="text-xl font-semibold">Information Collection and Use</h3>
 
-			<p>
-				While using our Site, we may ask you to provide us with certain personally identifiable information that can be used to contact or
-				identify you. Personally identifiable information may include, but is not limited to your name and email address. We only collect this
-				information if you provide it to us voluntarily.
-			</p>
-			<h3 class="text-xl font-semibold">Uses of Information</h3>
+      <p>
+        While using our Site, we may ask you to provide us with certain
+        personally identifiable information that can be used to contact or
+        identify you. Personally identifiable information may include, but is
+        not limited to your name and email address. We only collect this
+        information if you provide it to us voluntarily.
+      </p>
+      <h3 class="text-xl font-semibold">Uses of Information</h3>
 
-			<h4 class="text-base font-medium">We use the personal information you provide to us to:</h4>
+      <h4 class="text-base font-medium">
+        We use the personal information you provide to us to:
+      </h4>
 
-			<ul class="ml-3 list-inside list-disc">
-				<li>Respond to your inquiries</li>
-				<li>Send you newsletters and promotional communications</li>
-				<li>Analyze and improve the Site's content and user experience</li>
-			</ul>
-			<h3 class="text-xl font-semibold">Sharing of Information</h3>
-			<p>
-				We do not sell or rent your personal information to third parties. We may share your information with third-party service providers
-				who perform services on our behalf, such as website hosting, email delivery, and analytics. These third-party service providers are
-				not authorized to use or disclose your information for any purpose other than to perform services on our behalf.
-			</p>
-			<h3 class="text-xl font-semibold">Cookies</h3>
-			<p>
-				We use cookies to improve the Site's functionality and to enhance your experience on our Site. Cookies are small files that a site or
-				its service provider transfers to your computer's hard drive through your web browser that enables the site's or service provider's
-				systems to recognize your browser and capture and remember certain information.
-			</p>
-			<h3 class="text-xl font-semibold">Security</h3>
-			<p>
-				We take reasonable measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction.
-				However, no data transmission over the Internet or electronic storage system can be guaranteed to be 100% secure.
-			</p>
-			<h3 class="text-xl font-semibold">Links to Other Websites</h3>
-			<p>
-				Our Site may contain links to other websites that are not operated by us. We have no control over the content and policies of these
-				sites, and we are not responsible for the privacy practices or the content of these websites.
-			</p>
-			<h3 class="text-xl font-semibold">Changes to This Privacy</h3>
-			<p>
-				Policy We reserve the right to update this Privacy Policy at any time. Any material changes made to this Privacy Policy will be posted
-				on this page.
-			</p>
-			<h3 class="text-xl font-semibold">Contact Us</h3>
-			<p>If you have any questions about this Privacy Policy, please contact us at [insert contact email address]</p>
-		</div>
-	</div>
-	<footer class="dark:bg-gray-900 bg-gray-900">
-		<div class="container mx-auto flex flex-col items-center justify-between py-8 lg:flex-row">
-			<div class="mt-6 flex gap-4 lg:mt-0 lg:gap-6">
-				<a
-					href="/#main"
-					class="dark:text-gray-200 dark:hover:text-blue-400 text-sm text-gray-400 transition-colors duration-300 hover:text-blue-500"
-				>
-					Main
-				</a>
+      <ul class="ml-3 list-inside list-disc">
+        <li>Respond to your inquiries</li>
+        <li>Send you newsletters and promotional communications</li>
+        <li>Analyze and improve the Site's content and user experience</li>
+      </ul>
+      <h3 class="text-xl font-semibold">Sharing of Information</h3>
+      <p>
+        We do not sell or rent your personal information to third parties. We
+        may share your information with third-party service providers who
+        perform services on our behalf, such as website hosting, email delivery,
+        and analytics. These third-party service providers are not authorized to
+        use or disclose your information for any purpose other than to perform
+        services on our behalf.
+      </p>
+      <h3 class="text-xl font-semibold">Cookies</h3>
+      <p>
+        We use cookies to improve the Site's functionality and to enhance your
+        experience on our Site. Cookies are small files that a site or its
+        service provider transfers to your computer's hard drive through your
+        web browser that enables the site's or service provider's systems to
+        recognize your browser and capture and remember certain information.
+      </p>
+      <h3 class="text-xl font-semibold">Security</h3>
+      <p>
+        We take reasonable measures to protect your personal information from
+        unauthorized access, disclosure, alteration, or destruction. However, no
+        data transmission over the Internet or electronic storage system can be
+        guaranteed to be 100% secure.
+      </p>
+      <h3 class="text-xl font-semibold">Links to Other Websites</h3>
+      <p>
+        Our Site may contain links to other websites that are not operated by
+        us. We have no control over the content and policies of these sites, and
+        we are not responsible for the privacy practices or the content of these
+        websites.
+      </p>
+      <h3 class="text-xl font-semibold">Changes to This Privacy</h3>
+      <p>
+        Policy We reserve the right to update this Privacy Policy at any time.
+        Any material changes made to this Privacy Policy will be posted on this
+        page.
+      </p>
+      <h3 class="text-xl font-semibold">Contact Us</h3>
+      <p>
+        If you have any questions about this Privacy Policy, please contact us
+        at [insert contact email address]
+      </p>
+    </div>
+  </div>
+  <footer class="dark:bg-gray-900 bg-gray-900">
+    <div
+      class="container mx-auto flex flex-col items-center justify-between py-8 lg:flex-row"
+    >
+      <div class="mt-6 flex gap-4 lg:mt-0 lg:gap-6">
+        <a
+          href="/#main"
+          class="dark:text-gray-200 dark:hover:text-blue-400 text-sm text-gray-400 transition-colors duration-300 hover:text-blue-500"
+        >
+          Main
+        </a>
 
-				<a
-					href="/#about"
-					class="dark:text-gray-200 dark:hover:text-blue-400 text-sm text-gray-400 transition-colors duration-300 hover:text-blue-500"
-				>
-					About
-				</a>
+        <a
+          href="/#about"
+          class="dark:text-gray-200 dark:hover:text-blue-400 text-sm text-gray-400 transition-colors duration-300 hover:text-blue-500"
+        >
+          About
+        </a>
 
-				<a
-					href="/#products"
-					class="dark:text-gray-200 dark:hover:text-blue-400 text-sm text-gray-400 transition-colors duration-300 hover:text-blue-500"
-				>
-					Products
-				</a>
-				<a
-					href="/#contact"
-					class="dark:text-gray-200 dark:hover:text-blue-400 text-sm text-gray-400 transition-colors duration-300 hover:text-blue-500"
-				>
-					Contacts
-				</a>
+        <a
+          href="/#products"
+          class="dark:text-gray-200 dark:hover:text-blue-400 text-sm text-gray-400 transition-colors duration-300 hover:text-blue-500"
+        >
+          Products
+        </a>
+        <a
+          href="/#contact"
+          class="dark:text-gray-200 dark:hover:text-blue-400 text-sm text-gray-400 transition-colors duration-300 hover:text-blue-500"
+        >
+          Contacts
+        </a>
 
-				<a
-					href="/privacy"
-					class="dark:text-gray-200 dark:hover:text-blue-400 text-sm text-gray-400 transition-colors duration-300 hover:text-blue-500"
-				>
-					Privacy
-				</a>
-			</div>
+        <a
+          href="/privacy"
+          class="dark:text-gray-200 dark:hover:text-blue-400 text-sm text-gray-400 transition-colors duration-300 hover:text-blue-500"
+        >
+          Privacy
+        </a>
+      </div>
 
-			<p class="dark:text-gray-400 mt-6 text-sm text-gray-300 lg:mt-0">© Copyright 2024 Bartyspace Labs.</p>
-		</div>
-	</footer>
+      <p class="dark:text-gray-400 mt-6 text-sm text-gray-300 lg:mt-0">
+        © Copyright 2024 Bartyspace Labs.
+      </p>
+    </div>
+  </footer>
 </HTML>

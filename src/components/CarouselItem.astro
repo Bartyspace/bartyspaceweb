@@ -1,17 +1,20 @@
 ---
-import Image from 'astro/components/Image.astro'
-import Project1 from '../../public/352cb5.png'
-const { pos } = Astro.props
+import Image from 'astro/components/Image.astro';
+import Project1 from '../../public/352cb5.png';
+const { pos } = Astro.props;
 ---
 
 <div class="carousel__item flex-col rounded-xl border-2 p-4" data-pos={pos}>
-	<Image src={Project1} alt="Placeholder" class="w-full rounded-xl" />
-	<a href="https://bartyspacelabs.netlify.app">
-		<button class="relative mt-4 overflow-hidden rounded-full border border-white hover:animate-jump">
-			<span class="mx-4 my-2 flex text-white">Look at me</span>
-			<span class="absolute inset-0 overflow-hidden">
-				<span class="animate-shine absolute left-0 top-0 h-full w-full bg-gradient-to-t from-transparent via-white opacity-0"></span>
-			</span>
-		</button>
-	</a>
+  <Image src={Project1} alt="Placeholder" class="w-full rounded-xl" />
+  <a href="https://bartyspacelabs.netlify.app">
+    <button class="relative mt-4 overflow-hidden rounded-full border border-white hover:animate-jump">
+      <span class="mx-4 my-2 flex text-white">Look at me</span>
+      <span class="absolute inset-0 overflow-hidden">
+        <span
+          class="animate-shine absolute left-0 top-0 h-full w-full bg-gradient-to-t from-transparent via-white opacity-0"
+        >
+        </span>
+      </span>
+    </button>
+  </a>
 </div>
