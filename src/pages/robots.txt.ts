@@ -5,10 +5,6 @@ const robotsTxt = `
 User-agent: *
 Allow: /
 
-User-agent: *
-Allow: /404
-
-
 Sitemap: ${new URL('sitemap-index.xml', import.meta.env.SITE).href}
 `.trim();
 
