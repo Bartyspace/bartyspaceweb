@@ -1,55 +1,65 @@
 ---
-import { Image } from 'astro:assets'
-import favicon from '../../public/favicon.svg'
-import '../styles/global.css'
-import grid from '../../public/GridBackground.png'
+import {Image} from 'astro:assets';
+import favicon from '../../public/favicon.svg';
+import '../styles/global.css';
+import grid from '../../public/GridBackground.png';
 ---
 
 <script is:inline data-astro-rerun>
-	document.addEventListener('DOMContentLoaded', () => {
-		// Check if screen width is greater than 1024px
-		if (window.innerWidth > 1024) {
-			const gridMoveDiv = document.getElementById('gridmove')
-			const screenWidth = window.innerWidth
-			const screenHeight = window.innerHeight
-			const divWidth = gridMoveDiv.offsetWidth
-			const divHeight = gridMoveDiv.offsetHeight
+  document.addEventListener('DOMContentLoaded', () => {
+    // Check if screen width is greater than 1024px
+    if (window.innerWidth > 1024) {
+      const gridMoveDiv = document.getElementById('gridmove');
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+      const divWidth = gridMoveDiv.offsetWidth;
+      const divHeight = gridMoveDiv.offsetHeight;
 
-			const horizontalOffset = (screenWidth - divWidth) / 10
-			const verticalOffset = (screenHeight - divHeight) / 10
+      const horizontalOffset = (screenWidth - divWidth) / 10;
+      const verticalOffset = (screenHeight - divHeight) / 10;
 
-			gridMoveDiv.style.transform = `translate(${horizontalOffset}px, ${verticalOffset}px)`
+      gridMoveDiv.style.transform = `translate(${horizontalOffset}px, ${verticalOffset}px)`;
 
-			document.addEventListener('mousemove', (event) => {
-				const xOffset = (event.clientX - screenWidth / 2) / screenWidth
-				// Set yOffset to 0 to prevent vertical movement
-				const yOffset = 0
-				gridMoveDiv.style.transform = `translate(${horizontalOffset + xOffset * 20}px, ${verticalOffset + yOffset * 20}px)`
-			})
-		}
-	})
+      document.addEventListener('mousemove', event => {
+        const xOffset = (event.clientX - screenWidth / 2) / screenWidth;
+        // Set yOffset to 0 to prevent vertical movement
+        const yOffset = 0;
+        gridMoveDiv.style.transform = `translate(${horizontalOffset + xOffset * 20}px, ${verticalOffset + yOffset * 20}px)`;
+      });
+    }
+  });
 </script>
 
-<section id="main" class="flex h-screen w-screen items-center justify-center bg-gradient-to-b from-sky-600 from-40% to-indigo-950">
-	<div class="background-circle"></div>
-	<div id="gridmove" class="absolute flex items-center justify-center">
-		<Image
-			loading={'eager'}
-			src={grid}
-			class="border-t-4 z-0 h-screen border-b-4 lg:flex hidden border-white border-opacity-20 max-lg:object-cover xl:scale-x-125 xl:border-b-[5px] xl:border-t-[5px]"
-			alt="Grid background"
-		/>
-	</div>
+<section
+  id="main"
+  class="flex h-screen w-screen items-center justify-center bg-gradient-to-b from-sky-600 from-40% to-indigo-950">
+  <div class="background-circle"></div>
+  <div
+    id="gridmove"
+    class="absolute flex items-center justify-center">
+    <Image
+      loading={'eager'}
+      src={grid}
+      class="border-t-4 z-0 h-screen border-b-4 lg:flex hidden border-white border-opacity-20 max-lg:object-cover xl:scale-x-125 xl:border-b-[5px] xl:border-t-[5px]"
+      alt="Grid background"
+    />
+  </div>
 
-	<div class=" absolute -left-64 z-10 -top-16 overflow-hidden max-lg:hidden flex">
-		<Image loading={'eager'} src={favicon} class="z-20" alt="Bartyspace wolf" />
-	</div>
+  <div class="absolute -left-64 z-10 -top-16 overflow-hidden max-lg:hidden flex">
+    <Image
+      loading={'eager'}
+      src={favicon}
+      class="z-20"
+      alt="Bartyspace wolf"
+    />
+  </div>
 
-	<div class="z-20 flex flex-col items-start justify-center py-28">
-		<h1 class="text-center text-8xl font-bold text-white max-md:text-5xl container">
-			Tvorba Webů a<br>
-			Disignové Studio<br>
-			z Budoucnoti
-		</h1>
-	</div>
+  <div class="z-20 flex flex-col items-start justify-center py-28">
+    <h1
+      class="text-center text-8xl font-bold text-white max-md:text-5xl container leading-snug">
+      Tvorba Stránek a<br />
+      Disignové Studio<br />
+      z Budoucnoti
+    </h1>
+  </div>
 </section>
