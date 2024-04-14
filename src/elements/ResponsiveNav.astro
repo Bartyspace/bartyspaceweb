@@ -13,10 +13,8 @@ import '../styles/global.css';
     <script is:inline>
       var scrollPosition = window.scrollY;
       var navbar = document.getElementById('menuBg');
-
       window.addEventListener('scroll', function () {
         scrollPosition = window.scrollY;
-
         if (scrollPosition >= 30) {
           navbar.classList.remove('dynamic');
           navbar.classList.add('active-dynamic');
@@ -55,34 +53,36 @@ import '../styles/global.css';
       <MenuItems
         class="-z-10 hidden w-screen font-bold max-lg:absolute max-lg:top-0 max-lg:rounded-3xl max-lg:bg-zinc-700 max-lg:bg-opacity-50 max-lg:backdrop-blur-sm md:w-11/12 lg:col-span-2 lg:ml-12 lg:flex lg:gap-x-7 lg:text-lg xl:gap-x-9">
         <a
-          href="#about"
-          class="flex text-white hover-menu-text max-lg:my-6 max-lg:mt-24 max-lg:justify-center">
+          href="#o-mne"
+          class="flex text-white hover:border-b max-lg:my-6 max-lg:mt-24 max-lg:justify-center">
+          O MNĚ
         </a>
-        O MNĚ
+        <a
+          href="#projekty"
+          class="flex text-white hover:border-b max-lg:my-6 max-lg:justify-center">
+          PROJEKTY
+        </a>
+        <a
+          href="#kontakt"
+          class="flex text-white hover:border-b max-lg:my-6 max-lg:justify-center md:hidden">
+          KONTAKT
+        </a>
       </MenuItems>
-      <a
-        href="#projects"
-        class="flex text-white hover-menu-text max-lg:my-6 max-lg:justify-center">
-        PROJEKTY
-      </a>
-      <a
-        href="#contact"
-        class="flex text-white hover-menu-text max-lg:my-6 max-lg:justify-center md:hidden">
-        KONTAKT
-      </a>
     </Astronav>
-  </div>
-  <div class="col-span-3 items-center justify-center lg:col-span-3">
-    <a href="#main">
-      <Image
-        loading={'eager'}
-        src={BartyspaceLogo}
-        class="h-14 w-full"
-        alt="BartyspaceLabs"
-      />
-    </a>
-  </div>
-  <div class="mr-8 flex items-center justify-end lg:col-span-2 lg:mr-10">
-    <RoundedButton />
+    <div class="col-span-3 items-center justify-center lg:col-span-3">
+      <a href="#main">
+        <Image
+          loading={'eager'}
+          src={BartyspaceLogo}
+          class="h-14 w-full"
+          alt="BartyspaceLabs"
+        />
+      </a>
+    </div>
+    <div class="mr-8 flex items-center justify-end lg:col-span-2 lg:mr-10">
+      <a href="#kontakt">
+        <RoundedButton />
+      </a>
+    </div>
   </div>
 </header>
