@@ -7,7 +7,7 @@ import Carousel from '../elements/Carousel.astro';
   id="projekty"
   class="w-screen bg-indigo-950 lg:max-h-screen">
   <h2 class="container w-52 pt-6 text-center text-3xl font-semibold text-white">
-    My projects
+    Projekty
   </h2>
   <Carousel />
   <script is:inline>
@@ -48,7 +48,6 @@ import Carousel from '../elements/Carousel.astro';
       }
       return diff;
     }
-
     if (window.matchMedia('(max-width: 425px)').matches) {
       // Přidání tlačítek pro předchozí a následující položku
       const prevButton = document.createElement('button');
@@ -65,62 +64,39 @@ import Carousel from '../elements/Carousel.astro';
 
       prevButton.addEventListener('click', handleButtonClick);
       nextButton.addEventListener('click', handleButtonClick);
+
       function handleButtonClick(event) {
-        const currentIndex = elems.findIndex(item =>
-          item.classList.contains('carousel__item_active')
-        );
+        // Najdeme prvek s třídou '.carousel__item_active'
+        const activeItem = document.querySelector('.carousel__item_active');
+
+        // Pokud není nalezen žádný aktivní prvek, ukončíme funkci
+        if (!activeItem) return;
+
+        // Získáme aktuální index aktivní položky
+        const currentIndex = parseInt(activeItem.getAttribute('pos'));
+
         let newIndex;
 
         if (event.currentTarget.classList.contains('carousel__button_next')) {
           newIndex = currentIndex + 1;
-          if (newIndex >= elems.length) {
-            newIndex = 0;
-          }
         } else {
           newIndex = currentIndex - 1;
-          if (newIndex < 0) {
-            newIndex = elems.length - 1;
-          }
         }
 
-        update(elems[newIndex]);
+        // Najdeme novou aktivní položku podle nového indexu
+        const newActiveItem = document.querySelector(
+          `.carousel__item[pos="${newIndex}"]`
+        );
+
+        // Aktualizujeme karusel pomocí funkce update, pouze pokud byla nalezena nová aktivní položka
+        if (newActiveItem) {
+          update(newActiveItem);
+        }
       }
+
       const carouselWrapper = document.querySelector('.carousel');
       carouselWrapper.appendChild(prevButton);
       carouselWrapper.appendChild(nextButton);
-      // Přidání podpory pro dotykové gesto
-      let touchstartX = 0;
-      carouselList.addEventListener('touchstart', handleTouchStart, false);
-      carouselList.addEventListener('touchmove', handleTouchMove, false);
-
-      function handleTouchStart(event) {
-        touchstartX = event.touches[0].clientX;
-      }
-
-      function handleTouchMove(event) {
-        if (!touchstartX) return;
-        const touchendX = event.touches[0].clientX;
-        const deltaX = touchstartX - touchendX;
-        if (Math.abs(deltaX) > 30) {
-          // Vyhodnocení gesta pouze pokud je pohyb dostatečně velký
-          if (deltaX > 0) {
-            // Pohyb vlevo, tedy chceme přejít na následující položku
-            const currentIndex = elems.findIndex(item =>
-              item.classList.contains('carousel__item_active')
-            );
-            const newIndex = (currentIndex + 1) % elems.length;
-            update(elems[newIndex]);
-          } else {
-            // Pohyb vpravo, chceme přejít na předchozí položku
-            const currentIndex = elems.findIndex(item =>
-              item.classList.contains('carousel__item_active')
-            );
-            const newIndex = (currentIndex - 1 + elems.length) % elems.length;
-            update(elems[newIndex]);
-          }
-        }
-        touchstartX = 0;
-      }
     }
   </script>
 </section>
