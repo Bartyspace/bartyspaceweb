@@ -9,6 +9,7 @@ export interface Props {
   title?: string | undefined;
   description?: string | undefined;
   openGraphImage?: {src: string; alt: string} | undefined;
+  color?: string;
 }
 
 const {title, description, openGraphImage} = Astro.props;
@@ -57,12 +58,18 @@ const cannonical = `${siteUrl}${pathname}`;
       extend={{
         link: [
           {rel: 'sitemap', href: '/sitemap-index.xml'},
-          {rel: 'icon', href: '/favicon..svg'}
+          {rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png'},
+          {rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png'},
+          {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png'},
+          {rel: 'manifest', href: '/site.webmanifest'},
+          {rel: 'mask-icon', href: '/safari-pinned-tab.svg'}
         ],
         meta: [
           {name: 'viewport', content: 'width=device-width'},
           {name: 'robots', content: 'index'},
-          {name: 'generator', content: Astro.generator}
+          {name: 'generator', content: Astro.generator},
+          {name: 'msapplication-TileColor', content: '#da532c'},
+          {name: 'theme-color', content: 'ffffff'}
         ]
       }}
     />
