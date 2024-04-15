@@ -27,8 +27,6 @@ const cannonical = `${siteUrl}${pathname}`;
 
 <html lang="en">
   <Head>
-    <GoogleTag />
-    <ViewTransitions />
     <SEO
       charset="UTF-8"
       title={title!}
@@ -41,7 +39,7 @@ const cannonical = `${siteUrl}${pathname}`;
           title: title ?? siteSlogan,
           type: 'website',
           url: cannonical,
-          image: openGraphImage?.src ?? '/banner-1200x630.png'
+          image: openGraphImage?.src ?? '/BartyspaceScreen.png'
         },
         optional: {
           description: description ?? siteDescription,
@@ -57,7 +55,10 @@ const cannonical = `${siteUrl}${pathname}`;
         card: 'summary_large_image'
       }}
       extend={{
-        link: [{rel: 'sitemap', href: '/sitemap-index.xml'}],
+        link: [
+          {rel: 'sitemap', href: '/sitemap-index.xml'},
+          {rel: 'icon', href: '/favicon..svg'}
+        ],
         meta: [
           {name: 'viewport', content: 'width=device-width'},
           {name: 'robots', content: 'index'},
@@ -65,6 +66,8 @@ const cannonical = `${siteUrl}${pathname}`;
         ]
       }}
     />
+    <GoogleTag />
+    <ViewTransitions />
   </Head>
   <body>
     <slot />
