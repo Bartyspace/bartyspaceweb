@@ -6,11 +6,6 @@ import About from '../sections/About.astro';
 import Projects from '../sections/Projects.astro';
 import Services from '../sections/HireMe.astro';
 import Footer from '../elements/Footer.astro';
-import {SEO, type Props as SEOProps} from 'astro-seo';
-const {seo} = Astro.props;
-interface Props {
-  seo?: SEOProps;
-}
 ---
 
 <style is:global>
@@ -21,12 +16,7 @@ interface Props {
     src: url(https://fonts.cdnfonts.com/css/tt-lakes-neue-trial);
   }
 </style>
-<HTML
-  seo={{
-    title: 'Bartyspace Labs',
-    description:
-      'Prozkoumejte vesmír webové inovace v BartySpace Labs - vašem digitálním portálu pro špičkový vývoj a design webových stránek.'
-  }}>
+<HTML>
   <ResponsiveNav />
   <LandingPage />
   <About />
