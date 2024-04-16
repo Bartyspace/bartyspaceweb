@@ -4,7 +4,7 @@ import favicon from '../../public/favicon.svg';
 import grid from '../../public/GridBackground.png';
 ---
 
-<script is:inline type="text/partytown">
+<script is:inline >
   document.addEventListener('DOMContentLoaded', () => {
     // Check if screen width is greater than 1024px
     if (window.innerWidth > 1024) {
@@ -39,7 +39,7 @@ import grid from '../../public/GridBackground.png';
     <Image
       loading={'eager'}
       src={grid}
-      class="border-t-4 z-0 h-screen border-b-4 lg:flex hidden border-white border-opacity-20 max-lg:object-cover xl:scale-x-125 xl:border-b-[5px] xl:border-t-[5px]"
+      class="border-t-4 z-0 h-screen border-b-4 lg:flex hidde border-white border-opacity-20 w-screen object-cover 2xl:scale-x-125 xl:border-b-[5px] xl:border-t-[5px]"
       alt="Grid background"
     />
   </div>
@@ -55,7 +55,7 @@ import grid from '../../public/GridBackground.png';
 
   <div class="z-20 flex flex-col items-start justify-center py-28">
     <h1
-      class="text-center text-8xl font-bold text-white max-md:text-5xl container leading-snug">
+      class="text-center text-8xl font-bold text-white max-lg:text-5xl container leading-snug">
       Společně vytváříme nové standardy<br>
       pro Webový design<br>
       a Vývoj stránek.
