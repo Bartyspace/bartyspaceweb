@@ -8,7 +8,9 @@ import '../styles/global.css';
 export interface Props {
   title?: string | undefined;
   description?: string | undefined;
-  openGraphImage?: {src: string; alt: string} | undefined;
+  openGraphImage?:
+    | {src: string; alt: string; width?: number; height?: number}
+    | undefined;
   color?: string;
 }
 
@@ -47,8 +49,8 @@ const cannonical = `${siteUrl}${pathname}`;
         },
         image: {
           alt: openGraphImage?.alt ?? siteName,
-          width: 1200,
-          height: 630
+          width: openGraphImage?.width ?? 1200,
+          height: openGraphImage?.height ?? 630
         }
       }}
       twitter={{
