@@ -12,7 +12,8 @@ export default defineConfig({
     tailwind(),
     partytown({
       config: {
-        forward: ['dataLayer.push']
+        forward: ['dataLayer.push'],
+        config: {debug: false}
       }
     }),
     sitemap({
