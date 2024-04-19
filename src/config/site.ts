@@ -1,8 +1,8 @@
 const siteConfig = {
   name: 'Bartyspace Labs',
-  slogan: 'Společně vytváříme nové standardy pro webový design a tvoývoj stránek',
+  slogan: 'Spojujeme technologii s kreativitou',
   description:
-    'Objevte inovace webových stránek na Bartyspace Labs - váš digitální portál pro špičkový vývoj a design webových stránek. Navštivte nás a přesvděčte se',
+    'Vítejte na Bartyspace Labs, vašem digitálním portálu pro špičkový vývoj a design webových stránek. Jsem nadšenec, který se zaměřuje na inovace a kreativitu. Moje služby zahrnují web design, SEO optimalizaci, grafický design a konzultace. Kontaktujte mě a společně vytvoříme webovou stránku, která Vás bude reprezentovat!',
   email: 'bartys2000@gmail.com',
   url: 'https://bartyspacelabs.netlify.app',
   links: {
