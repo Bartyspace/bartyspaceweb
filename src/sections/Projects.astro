@@ -4,7 +4,7 @@ import Carousel from '../elements/Carousel.astro';
 
 <section
   id="projekty"
-  class="w-screen bg-indigo-950 lg:max-h-screen">
+  class="w-screen bg-indigo-950 lg:max-h-screen max-lg:h-5/6">
   <h2 class="container w-52 pt-6 text-center text-3xl font-semibold text-white">
     Projekty
   </h2>
@@ -48,54 +48,47 @@ import Carousel from '../elements/Carousel.astro';
       return diff;
     }
     if (window.matchMedia('(max-width: 425px)').matches) {
-      // Přidání tlačítek pro předchozí a následující položku
       const prevButton = document.createElement('button');
       prevButton.classList.add('carousel__button_prev');
-      // Vytvoření SVG pro tlačítko předchozí položky
-      // (Kód SVG nezměněn, je stejný jako ve tvém kódu)
-      prevButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="40" height="40" fill="none" viewBox="0 0 24 24"><path stroke="#337AFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/></svg>`;
+      prevButton.innerHTML =
+        '<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="40" height="40" fill="none" viewBox="0 0 24 24"><path stroke="#337AFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/></svg>';
 
       const nextButton = document.createElement('button');
       nextButton.classList.add('carousel__button_next');
-      // Vytvoření SVG pro tlačítko následující položky
-      // (Kód SVG nezměněn, je stejný jako ve tvém kódu)
-      nextButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="40" height="40" fill="none" viewBox="0 0 24 24"><path stroke="#337AFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/></svg>`;
+      nextButton.innerHTML =
+        '<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="40" height="40" fill="none" viewBox="0 0 24 24"><path stroke="#337AFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/></svg>';
 
       prevButton.addEventListener('click', handleButtonClick);
       nextButton.addEventListener('click', handleButtonClick);
 
       function handleButtonClick(event) {
-        // Najdeme prvek s třídou '.carousel__item_active'
-        const activeItem = document.querySelector('.carousel__item_active');
+        const activeItem = document.querySelector('.carousel__item_active'); // Tato třída by měla být součástí CarouselItem komponent
 
-        // Pokud není nalezen žádný aktivní prvek, ukončíme funkci
         if (!activeItem) return;
 
-        // Získáme aktuální index aktivní položky
-        const currentIndex = parseInt(activeItem.getAttribute('pos'));
-
+        const currentIndex = parseInt(activeItem.dataset.pos);
         let newIndex;
 
         if (event.currentTarget.classList.contains('carousel__button_next')) {
-          newIndex = currentIndex + 1;
+          newIndex = currentIndex === 2 ? -2 : currentIndex + 1; // Toto zabezpečí "kruhový" přechod na začátek nebo na konec
         } else {
-          newIndex = currentIndex - 1;
+          newIndex = currentIndex === -2 ? 2 : currentIndex - 1; // Toto zabezpečí "kruhový" přechod na začátek nebo na konec
         }
 
-        // Najdeme novou aktivní položku podle nového indexu
         const newActiveItem = document.querySelector(
-          `.carousel__item[pos="${newIndex}"]`
+          `.carousel__item[data-pos="${newIndex}"]`
         );
 
-        // Aktualizujeme karusel pomocí funkce update, pouze pokud byla nalezena nová aktivní položka
         if (newActiveItem) {
           update(newActiveItem);
         }
       }
 
       const carouselWrapper = document.querySelector('.carousel');
-      carouselWrapper.appendChild(prevButton);
-      carouselWrapper.appendChild(nextButton);
+      if (carouselWrapper) {
+        carouselWrapper.appendChild(prevButton);
+        carouselWrapper.appendChild(nextButton);
+      }
     }
   </script>
 </section>

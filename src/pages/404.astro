@@ -1,24 +1,65 @@
 ---
-import HTML from '../elements/HTML.astro';
+import {Head} from 'astro-capo';
+import {ViewTransitions} from 'astro:transitions';
+import {SEO} from 'astro-seo';
+import '../styles/global.css';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+
 ---
 
-<HTML title='404 stránka nenalezena' description='Bohužel tato stránka neexistuje'>
+<html lang="cs">
+  <Head>
+    <SEO
+      charset="UTF-8"
+      title="404 Stránka neexistuje"
+      description="Narazili jste na stránku, která neexistuje."
+      extend={{
+        link: [
+          {rel: 'sitemap', href: '/sitemap-index.xml'},
+          {rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png'},
+          {rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png'},
+          {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png'},
+          {rel: 'manifest', href: '/site.webmanifest'},
+          {rel: 'mask-icon', href: '/safari-pinned-tab.svg'}
+        ],
+        meta: [
+          {name: 'viewport', content: 'width=device-width'},
+          {name: 'robots', content: 'noarchive, noindex'},
+          {name: 'generator', content: Astro.generator},
+          {name: 'msapplication-TileColor', content: '#da532c'},
+          {name: 'theme-color', content: 'ffffff'}
+        ]
+      }}
+    />
+    <ViewTransitions />
+    <GoogleAnalytics />
+  </Head>
+  <style is:global>
+    @import url('https://fonts.cdnfonts.com/css/tt-lakes-neue-trial');
+    @font-face {
+      font-family: 'TT Lakes Neue Trial';
+      font-display: swap;
+      src: url(https://fonts.cdnfonts.com/css/tt-lakes-neue-trial);
+    }
+  </style>
   <section
-    class="bg-gradient-to-b from-sky-600 from-40% to-indigo-950 flex items-center justify-center h-screen">
+    class="bg-gradient-to-b from-cyan-800 from-40% to-indigo-950 flex items-center justify-center h-screen">
     <div class="container mx-auto">
       <div class="max-w-md mx-auto text-center top-1/2">
-        <h1 class="text-6xl font-semibold text-white mb-16">404</h1>
-        <p class="text-2xl font-light text-white mb-4">Page not found</p>
-        <p class="mb-4 text-white">
+        <h1 class="text-8xl font-bold text-white mb-16">404</h1>
+        <p class="text-4xl font-semibold text-white mb-8">Stránka nenalezena</p>
+        <p class="mb-4 text-xl text-white">
           Litujeme, ale zdá se, že jste narazili na stránku, která neexistuje. Neztrácejte
-          naději! Můžeme vám pomoci najít cestu zpět. Procházejte naše dostupné stránky
-          nebo nás kontaktujte, abychom vám mohli pomoci dál.
+          naději! Můžeme vám pomoci najít cestu zpět. Stačí kliknout na tlačítko<br />
+          <span class="text-emerald-400 text-5xl">↓</span>
         </p>
-        <div class="flex justify-center items-center pt-8">
+        <div class="flex justify-center items-center">
           <button
             type="button"
             class="relative flex transform-gpu items-center justify-center overflow-hidden rounded-full border-2 px-6 py-3 font-bold text-white transition-transform hover:animate-jump">
-            <span class="relative z-10"><a href="/">Domů</a></span>
+            <span class="relative z-10">
+              <a href="https://bartyspacelabs.netlify.app">Domů</a>
+            </span>
             <span class="absolute inset-0 overflow-hidden">
               <span
                 class="animate-shine to-transpatent absolute left-0 top-0 h-8 w-full bg-gradient-to-t from-transparent via-white opacity-0">
@@ -29,4 +70,4 @@ import HTML from '../elements/HTML.astro';
       </div>
     </div>
   </section>
-</HTML>
+</html>

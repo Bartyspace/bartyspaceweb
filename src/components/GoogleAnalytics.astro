@@ -3,8 +3,8 @@
   is:inline
   type="text/partytown"
   async
-  src="https://www.googletagmanager.com/gtag/js?id=G-5Z7417R7PW">
-</script>
+  src="https://www.googletagmanager.com/gtag/js?id=G-5Z7417R7PW"
+></script>
 <script is:inline type="text/partytown">
   window.dataLayer = window.dataLayer || [];
   function gtag() {
@@ -12,5 +12,7 @@
   }
   gtag('js', new Date());
 
-  gtag('config', 'G-5Z7417R7PW');
+  gtag('config', 'G-5Z7417R7PW', {
+    cookie_flags: 'max-age=7200;secure;samesite=lax'
+  });
 </script>

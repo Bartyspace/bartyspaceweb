@@ -1,13 +1,13 @@
 const siteConfig = {
   name: 'Bartyspace Labs',
-  slogan: 'Společně vytváříme nové standardy pro Webový design a Vývoj stránek',
+  slogan: 'Společně vytváříme nové standardy pro webový design a tvoývoj stránek',
   description:
-    'Objevte webové inovace na Bartyspace Labs - váš digitální portál pro špičkový vývoj a design. Navštivte nás na bartyspacelabs.netlify.app.',
+    'Objevte inovace webových stránek na Bartyspace Labs - váš digitální portál pro špičkový vývoj a design webových stránek. Navštivte nás a přesvděčte se',
   email: 'bartys2000@gmail.com',
   url: 'https://bartyspacelabs.netlify.app',
   links: {
     sourcecode: 'https://github.com/Bartyspace/bartyspaceweb',
-    github: 'https://https://github.com/Bartyspacem',
+    github: 'https://https://github.com/Bartyspace'
   }
 } as const;
 
