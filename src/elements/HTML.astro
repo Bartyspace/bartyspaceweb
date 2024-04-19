@@ -28,12 +28,12 @@ const canonical = `${siteUrl}${pathname}`;
     <SEO
       charset="UTF-8"
       title={title!}
-      titleTemplate={`%s  ${siteName}`}
+      titleTemplate={`%s | ${siteName}`}
       description={description ?? siteDescription}
       canonical={canonical}
       openGraph={{
         basic: {
-          title: 'Bartyspace Labs',
+          title: siteName,
           type: 'website',
           url: canonical,
           image: openGraphImage?.src ?? '../../public/BartyspaceScreen.png'
