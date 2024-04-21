@@ -4,9 +4,43 @@ import Image from 'astro/components/Image.astro';
 import BartysScreen from '../../public/BartyspaceScreen.png';
 ---
 
-<div class="carousel pt-24 lg:pb-16">
+<div class="carousel pt-24 lg:pb-16 pb-16">
   <div
     class="carousel__wrapper 3xl:h-[700px] flex h-[200px] w-full justify-center md:h-[300px] lg:h-[250px] xl:h-[400px] 2xl:h-[460px]">
+    <button class="carousel__button_prev hidden max-md:flex">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        width="40"
+        height="40"
+        fill="none"
+        viewBox="0 0 24 24">
+        <path
+          stroke="#337AFF"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m15 19-7-7 7-7">
+        </path>
+      </svg>
+    </button>
+    <button class="carousel__button_next hidden max-md:flex">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        width="40"
+        height="40"
+        fill="none"
+        viewBox="0 0 24 24">
+        <path
+          stroke="#337AFF"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m9 5 7 7-7 7">
+        </path>
+      </svg>
+    </button>
     <CarouselItem
       pos="-2"
       buttonText="Bartyspace Labs"

@@ -4,94 +4,14 @@ import Carousel from '../elements/Carousel.astro';
 
 <section
   id="projekty"
-  class="w-screen bg-indigo-950 lg:max-h-screen max-lg:h-5/6">
+  class="w-screen bg-indigo-950 lg:max-h-screen md:h-5/6">
   <h2 class="container w-52 pt-6 text-center text-3xl font-semibold text-white">
     Projekty
   </h2>
   <Carousel />
-  <script is:inline>
-    const carouselList = document.querySelector('.carousel__wrapper');
-    const carouselItems = document.querySelectorAll('.carousel__item');
-    const elems = [...carouselItems];
 
-    carouselList.addEventListener('click', function (event) {
-      const newActive = event.target.closest('.carousel__item');
-      if (!newActive || newActive.classList.contains('carousel__item_active')) {
-        return;
-      }
-      update(newActive);
-    });
-
-    function update(newActive) {
-      const newActivePos = +newActive.dataset.pos;
-      const positionMap = new Map();
-      elems.forEach(elem => positionMap.set(+elem.dataset.pos, elem));
-
-      const positions = [-2, -1, 0, 1, 2];
-      positions.forEach(pos => {
-        const item = positionMap.get(pos);
-        const itemPos = +item.dataset.pos;
-        if (item === newActive) {
-          item.classList.add('carousel__item_active');
-        } else {
-          item.classList.remove('carousel__item_active');
-        }
-        item.dataset.pos = getPos(itemPos, newActivePos);
-      });
-    }
-
-    function getPos(current, active) {
-      const diff = current - active;
-      if (Math.abs(current - active) > 2) {
-        return -current;
-      }
-      return diff;
-    }
-    if (window.matchMedia('(max-width: 425px)').matches) {
-      const prevButton = document.createElement('button');
-      prevButton.classList.add('carousel__button_prev');
-      prevButton.innerHTML =
-        '<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="40" height="40" fill="none" viewBox="0 0 24 24"><path stroke="#337AFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/></svg>';
-
-      const nextButton = document.createElement('button');
-      nextButton.classList.add('carousel__button_next');
-      nextButton.innerHTML =
-        '<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="40" height="40" fill="none" viewBox="0 0 24 24"><path stroke="#337AFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/></svg>';
-
-      prevButton.addEventListener('click', handleButtonClick);
-      nextButton.addEventListener('click', handleButtonClick);
-
-      function handleButtonClick(event) {
-        const activeItem = document.querySelector('.carousel__item_active'); // Tato třída by měla být součástí CarouselItem komponent
-
-        if (!activeItem) return;
-
-        const currentIndex = parseInt(activeItem.dataset.pos);
-        let newIndex;
-
-        if (event.currentTarget.classList.contains('carousel__button_next')) {
-          newIndex = currentIndex === 2 ? -2 : currentIndex + 1; // Toto zabezpečí "kruhový" přechod na začátek nebo na konec
-        } else {
-          newIndex = currentIndex === -2 ? 2 : currentIndex - 1; // Toto zabezpečí "kruhový" přechod na začátek nebo na konec
-        }
-
-        const newActiveItem = document.querySelector(
-          `.carousel__item[data-pos="${newIndex}"]`
-        );
-
-        if (newActiveItem) {
-          update(newActiveItem);
-        }
-      }
-
-      const carouselWrapper = document.querySelector('.carousel');
-      if (carouselWrapper) {
-        carouselWrapper.appendChild(prevButton);
-        carouselWrapper.appendChild(nextButton);
-      }
-    }
-  </script>
 </section>
+
 <div class="flex h-32 w-screen items-center bg-indigo-950">
   <hr
     class="h-[2px] w-2/3 translate-x-1/4 border-none bg-gradient-to-r from-transparent via-gray-500 to-transparent"

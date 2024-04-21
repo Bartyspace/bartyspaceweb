@@ -218,11 +218,13 @@ h1 {
 
 .carousel__button_prev {
   left: 10px;
+  top: 45%;
   position: absolute;
 }
 
 .carousel__button_next {
   right: 10px;
+  top: 45%;
   position: absolute;
 }
 @keyframes slide-in {
