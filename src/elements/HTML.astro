@@ -4,7 +4,7 @@ import siteConfig from '../config/site';
 import {SEO} from 'astro-seo';
 import {ViewTransitions} from 'astro:transitions';
 import {Head} from 'astro-capo';
-import stylesUrl from '../styles/global.css?url';
+import '../../public/styles/global.css';
 export interface Props {
   title?: string | undefined;
   description?: string | undefined;
@@ -78,25 +78,9 @@ const canonical = `${siteUrl}${pathname}`;
       async
       is:inline
       type="text/partytown"
-      data-astro-rerun
-      src="/JavaScripts/Carousel.js"
-    ></script>
-    <script
-      async
-      is:inline
-      data-astro-rerun
-      type="text/partytown"
-      src="/Javascripts/Grid">
+      src="/JavaScripts/Carousel.js">
     </script>
-    <link
-      rel="preload"
-      href={stylesUrl}
-      as="style"
-    />
-    <link
-      rel="stylesheet"
-      href={stylesUrl}
-    />
+    <script async is:inline type="text/partytown" src="/Javascripts/Grid"></script>
   </Head>
   <body>
     <slot />

@@ -9,7 +9,9 @@ export default defineConfig({
   site: 'https://bartyspacelabs.netlify.app/',
   trailingSlash: 'never',
   integrations: [
-    tailwind(),
+    tailwind({
+      nesting: true
+    }),
     partytown({
       config: {
         forward: ['dataLayer.push'],
