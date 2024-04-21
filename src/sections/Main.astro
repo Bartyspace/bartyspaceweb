@@ -4,30 +4,6 @@ import favicon from '../../public/favicon.svg';
 import grid from '../../public/GridBackground.png';
 ---
 
-<script is:inline >
-  document.addEventListener('DOMContentLoaded', () => {
-    // Check if screen width is greater than 1024px
-    if (window.innerWidth > 1024) {
-      const gridMoveDiv = document.getElementById('gridmove');
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
-      const divWidth = gridMoveDiv.offsetWidth;
-      const divHeight = gridMoveDiv.offsetHeight;
-
-      const horizontalOffset = (screenWidth - divWidth) / 10;
-      const verticalOffset = (screenHeight - divHeight) / 10;
-
-      gridMoveDiv.style.transform = `translate(${horizontalOffset}px, ${verticalOffset}px)`;
-
-      document.addEventListener('mousemove', event => {
-        const xOffset = (event.clientX - screenWidth / 2) / screenWidth;
-        // Set yOffset to 0 to prevent vertical movement
-        const yOffset = 0;
-        gridMoveDiv.style.transform = `translate(${horizontalOffset + xOffset * 20}px, ${verticalOffset + yOffset * 20}px)`;
-      });
-    }
-  });
-</script>
 
 <section
   id="domu"
@@ -56,8 +32,8 @@ import grid from '../../public/GridBackground.png';
   <div class="z-20 flex flex-col items-start justify-center py-28">
     <h1
       class="text-center text-8xl font-bold text-white max-lg:text-5xl container leading-snug">
-      Společně vytváříme nové standardy<br>
-      pro webový design<br>
+      Společně vytváříme nové standardy<br />
+      pro webový design<br />
       a tvorba stránek.
     </h1>
   </div>

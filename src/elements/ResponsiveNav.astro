@@ -53,23 +53,28 @@ import RoundedButton from '../components/RoundedButton.astro';
         class="-z-10 hidden w-screen font-bold max-lg:absolute max-lg:top-0 max-lg:rounded-3xl max-lg:bg-zinc-700 max-lg:bg-opacity-50 max-lg:backdrop-blur-sm md:w-11/12 lg:col-span-2 lg:ml-12 lg:flex lg:gap-x-7 lg:text-lg xl:gap-x-9">
         <a
           href="#o-mne"
-          class="flex text-white lg:hover:border-b max-lg:my-6 max-lg:mt-24 max-lg:justify-center">
+          class="flex text-white lg:hover:border-b max-lg:my-6 max-lg:mt-24 max-lg:justify-center"
+          data-astro-reload>
           O MNĚ
         </a>
         <a
           href="#projekty"
-          class="flex text-white lg:hover:border-b max-lg:my-6 max-lg:justify-center">
+          class="flex text-white lg:hover:border-b max-lg:my-6 max-lg:justify-center"
+          data-astro-reload>
           PROJEKTY
         </a>
         <a
           href="#kontakt"
-          class="flex text-white lg:hover:border-b max-lg:my-6 max-lg:justify-center md:hidden">
+          class="flex text-white lg:hover:border-b max-lg:my-6 max-lg:justify-center md:hidden"
+          data-astro-reload>
           KONTAKT
         </a>
       </MenuItems>
     </Astronav>
     <div class="col-span-3 items-center justify-center lg:col-span-3">
-      <a href="/">
+      <a
+        href="/"
+        data-astro-reload>
         <Image
           loading={'eager'}
           src={BartyspaceLogo}

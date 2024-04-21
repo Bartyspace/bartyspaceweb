@@ -1,14 +1,16 @@
 ---
 const {pos} = Astro.props;
 const {link} = Astro.props;
-const {buttonText} = Astro.props
+const {buttonText} = Astro.props;
 ---
 
 <div
   class="carousel__item flex-col rounded-xl border-2 p-4"
   data-pos={pos}>
   <slot />
-  <a href={link}>
+  <a
+    href={link}
+    data-astro-reload>
     <button
       class="relative mt-4 overflow-hidden rounded-full border border-white hover:animate-jump">
       <span class="mx-4 my-2 flex text-white">{buttonText}</span>

@@ -74,8 +74,20 @@ const canonical = `${siteUrl}${pathname}`;
     />
     <GoogleTag />
     <ViewTransitions />
-    <script type="text/partytown" data-astro-rerun src="/JavaScripts/Carousel.js"
+    <script
+      async
+      is:inline
+      type="text/partytown"
+      data-astro-rerun
+      src="/JavaScripts/Carousel.js"
     ></script>
+    <script
+      async
+      is:inline
+      data-astro-rerun
+      type="text/partytown"
+      src="/Javascripts/Grid">
+    </script>
     <link
       rel="preload"
       href={stylesUrl}
