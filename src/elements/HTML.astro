@@ -4,7 +4,7 @@ import siteConfig from '../config/site';
 import {SEO} from 'astro-seo';
 import {ViewTransitions} from 'astro:transitions';
 import {Head} from 'astro-capo';
-import '../../public/styles/global.css';
+import stylesUrl from '../styles/global.css?url';
 export interface Props {
   title?: string | undefined;
   description?: string | undefined;
@@ -74,7 +74,17 @@ const canonical = `${siteUrl}${pathname}`;
     />
     <GoogleTag />
     <ViewTransitions />
-    <script type="text/partytown" data-astro-rerun src="/JavaScripts/Carousel.js"></script>
+    <script type="text/partytown" data-astro-rerun src="/JavaScripts/Carousel.js"
+    ></script>
+    <link
+      rel="preload"
+      href={stylesUrl}
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href={stylesUrl}
+    />
   </Head>
   <body>
     <slot />
