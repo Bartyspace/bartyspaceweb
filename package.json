@@ -27,6 +27,7 @@
     "astro-navbar": "^2.3.1",
     "astro-particles": "^2.10.0",
     "astro-seo": "^0.8.3",
+    "astro-sw": "^1.0.4",
     "flowbite": "^2.3.0",
     "netlify": "^13.1.14",
     "postcss-import": "^16.1.0",

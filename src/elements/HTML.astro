@@ -4,7 +4,7 @@ import siteConfig from '../config/site';
 import {SEO} from 'astro-seo';
 import {ViewTransitions} from 'astro:transitions';
 import {Head} from 'astro-capo';
-import '../../public/styles/global.css';
+
 export interface Props {
   title?: string | undefined;
   description?: string | undefined;
@@ -23,6 +23,7 @@ const {name: siteName, description: siteDescription, url: siteUrl} = siteConfig;
 const canonical = `${siteUrl}${pathname}`;
 ---
 
+<!doctype html>
 <html lang="cs">
   <Head>
     <SEO
@@ -61,7 +62,8 @@ const canonical = `${siteUrl}${pathname}`;
           {rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png'},
           {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png'},
           {rel: 'manifest', href: '/site.webmanifest'},
-          {rel: 'mask-icon', href: '/safari-pinned-tab.svg'}
+          {rel: 'mask-icon', href: '/safari-pinned-tab.svg'},
+          {rel: 'stylesheet', href: '/styles/global.css'}
         ],
         meta: [
           {name: 'viewport', content: 'width=device-width'},
@@ -74,13 +76,15 @@ const canonical = `${siteUrl}${pathname}`;
     />
     <GoogleTag />
     <ViewTransitions />
+
     <script
-      async
-      is:inline
       type="text/partytown"
+      defer
       src="/JavaScripts/Carousel.js">
     </script>
-    <script async is:inline type="text/partytown" src="/Javascripts/Grid"></script>
+        <script async  src="/JavaScripts/Grid.js">
+       
+        </script>
   </Head>
   <body>
     <slot />

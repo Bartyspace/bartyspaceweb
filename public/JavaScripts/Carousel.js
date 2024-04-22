@@ -35,24 +35,19 @@ function getPos(current, active) {
   }
   return diff;
 }
-const prevButton = document.querySelector('.carousel__button_prev');
-const nextButton = document.querySelector('.carousel__button_next');
 
-// Přidat posluchače událostí pro tlačítka předchozího a dalšího prvku
-prevButton.addEventListener('click', function () {
-  if (window.innerWidth <= 425) {
-    const activeItem = document.querySelector('.carousel__item_active');
-    const prevItem =
-      activeItem.previousElementSibling || carouselItems[carouselItems.length - 1];
-    update(prevItem);
-  }
-});
+document.addEventListener('DOMContentLoaded', function () {
+  const prevButton = document.querySelector('.carousel__button_prev');
+  const nextButton = document.querySelector('.carousel__button_next');
 
-nextButton.addEventListener('click', function () {
-  if (window.innerWidth <= 425) {
+  nextButton.addEventListener('click', function () {
     const activeItem = document.querySelector('.carousel__item_active');
-    const nextItem =
-      activeItem.nextElementSibling || carouselItems[0];
+    const nextItem = activeItem.nextElementSibling || carouselItems[0];
     update(nextItem);
-  }
+  });
+  prevButton.addEventListener('click', function () {
+    const activeItem = document.querySelector('.carousel__item_active');
+    const prevItem = activeItem.previousElementSibling || carouselItems[0];
+    update(prevItem);
+  });
 });

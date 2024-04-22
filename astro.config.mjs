@@ -2,7 +2,6 @@ import {defineConfig} from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import partytown from '@astrojs/partytown';
 import sitemap from '@astrojs/sitemap';
-import lighthouse from 'astro-lighthouse';
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,8 +13,7 @@ export default defineConfig({
     }),
     partytown({
       config: {
-        forward: ['dataLayer.push'],
-        config: {debug: false}
+        forward: ['dataLayer.push']
       }
     }),
     sitemap({
@@ -23,6 +21,5 @@ export default defineConfig({
       priority: 0.7,
       lastmod: new Date('2022-02-24')
     }),
-    lighthouse()
   ]
 });
