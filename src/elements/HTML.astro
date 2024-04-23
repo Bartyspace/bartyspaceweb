@@ -37,7 +37,7 @@ const canonical = `${siteUrl}${pathname}`;
           title: siteName,
           type: 'website',
           url: canonical,
-          image: openGraphImage?.src ?? '../../public/BartyspaceScreen.png'
+          image: openGraphImage?.src ?? '/BartyspaceScreen.png'
         },
         optional: {
           description: description ?? siteDescription,
@@ -53,7 +53,7 @@ const canonical = `${siteUrl}${pathname}`;
         card: 'summary_large_image',
         title: siteName,
         description: description ?? siteDescription,
-        image: '../../public/android-chrome-512x512.png'
+        image: '/android-chrome-512x512.png'
       }}
       extend={{
         link: [
@@ -76,8 +76,16 @@ const canonical = `${siteUrl}${pathname}`;
     />
     <GoogleTag />
     <ViewTransitions />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Bartyspace Labs",
+        "url": "https://bartyspacelabs.netlify.app/"
+      }
+    </script>
     <script async src="/JavaScripts/Grid.js"></script>
-    <script type="text/partytown" src="/JavaScripts/Carousel.js"></script>
+    <script  type="text/partytown" src="/JavaScripts/Carousel.js"></script>
   </Head>
   <body>
     <slot />
