@@ -6,7 +6,7 @@ User-agent: *
 Allow: /
 
 User-agent: *
-Disallow: /404
+Allow: /404
 
 Sitemap: ${new URL('sitemap-index.xml', import.meta.env.SITE).href}
 `.trim();
