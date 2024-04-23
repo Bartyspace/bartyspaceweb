@@ -4,9 +4,8 @@ const robotsTxt = `
 
 User-agent: *
 Allow: /
+Allow: /404
 
-User-agent: *
-Disallow: /404
 
 Sitemap: ${new URL('sitemap-index.xml', import.meta.env.SITE).href}
 `.trim();
