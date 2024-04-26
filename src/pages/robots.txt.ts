@@ -5,7 +5,7 @@ const robotsTxt = `
 User-agent: *
 Allow: /
 Allow: /404
-
+Disallow: /feed/
 
 Sitemap: ${new URL('sitemap-index.xml', import.meta.env.SITE).href}
 `.trim();
