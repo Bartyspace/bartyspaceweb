@@ -4,9 +4,10 @@ import Image from 'astro/components/Image.astro';
 import BartysScreen from '../assets/BartyspaceScreen.png';
 ---
 
-<div class="carousel pt-24 lg:pb-16 pb-16">
+<div class="carousel pt-24 max-lg:pb-12">
   <div
     class="carousel__wrapper 3xl:h-[700px] flex h-[200px] w-full justify-center md:h-[300px] lg:h-[250px] xl:h-[400px] 2xl:h-[460px]">
+    
     <button
       id="prev-button"
       aria-label="prev-button"
@@ -48,39 +49,6 @@ import BartysScreen from '../assets/BartyspaceScreen.png';
       </svg>
     </button>
     <CarouselItem
-      pos="-2"
-      buttonText="-2"
-      link="/">
-      <Image
-        src={BartysScreen}
-        alt="Screen from web Bartyspace Labs"
-        loading={'eager'}
-        class="w-full rounded-xl"
-      />
-    </CarouselItem>
-    <CarouselItem
-      pos="-1"
-      buttonText="-1"
-      link="/">
-      <Image
-        src={BartysScreen}
-        alt="Screen from web Bartyspace Labs"
-        loading={'eager'}
-        class="w-full rounded-xl"
-      />
-    </CarouselItem>
-    <CarouselItem
-      pos="0"
-      buttonText="0"
-      link="/">
-      <Image
-        src={BartysScreen}
-        alt="Screen from web Bartyspace Labs"
-        loading={'eager'}
-        class="w-full rounded-xl"
-      />
-    </CarouselItem>
-    <CarouselItem
       pos="1"
       buttonText="1"
       link="/">
@@ -94,6 +62,39 @@ import BartysScreen from '../assets/BartyspaceScreen.png';
     <CarouselItem
       pos="2"
       buttonText="2"
+      link="/">
+      <Image
+        src={BartysScreen}
+        alt="Screen from web Bartyspace Labs"
+        loading={'eager'}
+        class="w-full rounded-xl"
+      />
+    </CarouselItem>
+    <CarouselItem
+      pos="3"
+      buttonText="3"
+      link="/">
+      <Image
+        src={BartysScreen}
+        alt="Screen from web Bartyspace Labs"
+        loading={'eager'}
+        class="w-full rounded-xl"
+      />
+    </CarouselItem>
+    <CarouselItem
+      pos="4"
+      buttonText="4"
+      link="/">
+      <Image
+        src={BartysScreen}
+        alt="Screen from web Bartyspace Labs"
+        loading={'eager'}
+        class="w-full rounded-xl"
+      />
+    </CarouselItem>
+    <CarouselItem
+      pos="5"
+      buttonText="5"
       link="/">
       <Image
         src={BartysScreen}

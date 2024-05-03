@@ -77,7 +77,7 @@ const canonical = `${siteUrl}${pathname}`;
     />
     <GoogleTag />
     <ViewTransitions />
-    <script type="application/ld+json">
+    <script is:inline type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -85,8 +85,7 @@ const canonical = `${siteUrl}${pathname}`;
         "url": "https://bartyspacelabs.netlify.app/"
       }
     </script>
-    <script async src="/JavaScripts/Grid.js"></script>
-    <script type="text/partytown" src="/JavaScripts/Carousel.js"></script>
+   
   </Head>
   <body>
     <slot />
