@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const xOffset = (event.clientX - screenWidth / 2) / screenWidth;
       gridMoveDiv.style.transform = `translate(${horizontalOffset + xOffset * 20}px, ${verticalOffset}px)`;
     });
-  } else if (screenWidth <= 768 && window.DeviceMotionEvent) {
+  } else if (screenWidth <= 1000 && window.DeviceMotionEvent) {
     window.addEventListener('devicemotion', e => {
       const accelerationX = e.accelerationIncludingGravity.x;
       gridMoveDiv.style.transform = `translate(${horizontalOffset + accelerationX}px, ${verticalOffset}px)`;
