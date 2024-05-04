@@ -26,9 +26,7 @@ h1 {
   text-align: center;
   line-height: 1.2;
 }
-section {
-  scroll-snap-align: start;
-}
+
 .active-dynamic {
   background: rgba(38, 37, 64, 0.41);
   -webkit-backdrop-filter: blur(3px) saturate(100%);

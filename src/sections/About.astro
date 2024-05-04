@@ -1,6 +1,6 @@
 ---
 import {Image} from 'astro:assets';
-import MyPhoto from '../assets/MyPhoto.png';
+import MyPhoto from '../assets/MyPhoto_1200.jpg';
 ---
 
 <section
@@ -9,12 +9,20 @@ import MyPhoto from '../assets/MyPhoto.png';
   <div class="flex flex-col lg:grid lg:grid-cols-2">
     <Image
       src={MyPhoto}
+      widths={[400, 800, 1200, MyPhoto.width]}
+      sizes={`(max-width: 425px) 400px, (max-width: 728px) 800px, (max-width: 1600px) 1200px, ${MyPhoto.width}px`}
       alt="Bartyspace in nature"
-      loading={'eager'}
-      class="h-auto w-full object-cover object-center pt-5 lg:h-screen"
+      loading={'lazy'}
+      class="object-center mt-24 shadow-lg shadow-indigo-800"
     />
     <div
-      class="max-lg:mt-8 mx-auto flex max-w-3xl flex-col justify-center max-lg:max-w-xl">
+      class="max-lg:mt-8
+      mx-auto
+      flex
+      max-w-3xl
+      flex-col
+      justify-center
+      max-lg:max-w-xl">
       <h2
         class="container pb-24 text-center max-md:pt-16 text-3xl font-semibold text-white">
         O mně

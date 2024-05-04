@@ -1,3 +1,24 @@
+function requestMotionPermission() {
+  if (typeof DeviceMotionEvent.requestPermission === 'function') {
+    DeviceMotionEvent.requestPermission()
+      .then(permissionState => {
+        if (permissionState === 'granted') {
+          window.addEventListener('devicemotion', e => {
+            // Váš kód zde
+          });
+        }
+      })
+      .catch(console.error);
+  } else {
+    // zpracování pro prohlížeče, které nevyžadují povolení
+    window.addEventListener('devicemotion', e => {
+      // Váš kód zde
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', requestMotionPermission);
+
 document.addEventListener('DOMContentLoaded', () => {
   const gridMoveDiv = document.getElementById('gridmove');
   const screenWidth = window.innerWidth;
