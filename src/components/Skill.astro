@@ -1,0 +1,16 @@
+---
+const {name, icon} = Astro.props;
+import {Icon} from 'astro-icon/components';
+---
+
+<div class="flex justify-center max-xl:text-sm">
+  {
+    icon && (
+      <Icon
+        class=" mr-2 text-lg"
+        name={icon}
+      />
+    )
+  }
+  <p>{name}</p>
+</div>

@@ -42,6 +42,8 @@
   },
   "devDependencies": {
     "@astrojs/partytown": "^2.0.4",
+    "@iconify-json/mdi": "^1.1.66",
+    "@iconify-json/skill-icons": "^1.1.8",
     "autoprefixer": "^10.4.19",
     "eslint-config-prettier": "^9.1.0",
     "postcss": "^8.4.38",
