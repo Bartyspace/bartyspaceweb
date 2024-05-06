@@ -39,6 +39,11 @@ h1 {
 .dynamic {
   opacity: 0 !important;
 }
+.shadow-about {
+  box-shadow: 7px 8px 13px -2px rgb(124, 124, 124);
+  -webkit-box-shadow: 7px 8px 13px -2px rgb(124, 124, 124);
+  -moz-box-shadow: 7px 8px 13px -2px rgb(124, 124, 124);
+}
 
 @keyframes shine {
   0% {

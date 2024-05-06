@@ -1,34 +1,37 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
-    "./node_modules/flowbite/**/*.js",
+    './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+    './node_modules/flowbite/**/*.js'
   ],
-  darkMode: "false",
+  darkMode: 'false',
   theme: {
-    fontFamily: {
-    },
     extend: {
-      container: {
-        center: true,
-        padding: {
-          DEFAULT: "0.875rem",
-          sm: "1.125rem",
-          md: "1.125rem",
-          lg: "0.625rem",
-          xl: "0.625rem",
-          "2xl": "0.625rem",
-        },
-        screens: {
-          sm: "100%",
-          md: "100%",
-          lg: "1024px",
-          xl: "1280px",
-          "2xl": "1580px",
-          "3xl": "2560px",
-        },
-      },
+      colors: {
+        raspberry: {
+          500: '#E30B5C'
+        }
+      }
     },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '0.875rem',
+        sm: '1.125rem',
+        md: '1.125rem',
+        lg: '0.625rem',
+        xl: '0.625rem',
+        '2xl': '0.625rem'
+      },
+      screens: {
+        sm: '100%',
+        md: '100%',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1580px',
+        '3xl': '2560px'
+      }
+    }
   },
-  plugins: [require("flowbite/plugin"), require("tailwindcss-animated")],
+  plugins: [require('flowbite/plugin'), require('tailwindcss-animated')]
 };
