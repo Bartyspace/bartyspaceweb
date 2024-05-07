@@ -1,0 +1,38 @@
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "./bartyspace" 
+publishOrigin = "default"
+command = "npm run build"
+commandOrigin = "heuristics"
+
+[build.environment]
+URL = "https://bartyspacelabs.netlify.app"  
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+[[redirects]]
+from = "/404/:splat"
+to = "https://bartyspacelabs.netlify.app/404"
+status = 404
+
+[[redirects]]
+from = ":scheme://www.bartyspacelabs.netlify.app/*"
+to = "https://bartyspacelabs.netlify.app/:splat"
+status = 302  
