@@ -79,6 +79,7 @@ if (isSmallScreen()) {
   document
     .querySelector('.carousel__button_next')
     .addEventListener('click', () => updateCarousel('next'));
-  document;
-  // ...
+  document
+    .querySelector('.carousel__button_prev')
+    .addEventListener('click', () => updateCarousel('prev'));
 }
