@@ -1,0 +1,4 @@
+/404/* https://bartyspacelabs.tech/404 404
+http://www.bartyspacelabs.tech/* https://bartyspacelabs.tech/:splat 302
+https://www.bartyspacelabs.tech/* https://bartyspacelabs.tech/:splat 302
+https://bartyspacelabs.netlify.app/* https://bartyspacelabs.tech/:splat 301
