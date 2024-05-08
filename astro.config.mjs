@@ -9,6 +9,7 @@ import icon from 'astro-icon';
 export default defineConfig({
   site: 'https://bartyspacelabs.tech/',
   trailingSlash: 'never',
+
   integrations: [
     tailwind({
       nesting: true
