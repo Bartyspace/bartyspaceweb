@@ -10,7 +10,7 @@ command = "npm run build"
 commandOrigin = "heuristics"
 
 [build.environment]
-URL = "https://bartyspacelabs.netlify.app"  
+URL = "https://bartyspacelabs.tech"  
 
 [build.processing]
 
@@ -29,10 +29,20 @@ URL = "https://bartyspacelabs.netlify.app"
 
 [[redirects]]
 from = "/404/:splat"
-to = "https://bartyspacelabs.netlify.app/404"
+to = "https://bartyspacelabs.tech/404"
 status = 404
 
 [[redirects]]
-from = ":scheme://www.bartyspacelabs.netlify.app/*"
-to = "https://bartyspacelabs.netlify.app/:splat"
+from = ":scheme://www.bartyspacelabs.tech/*"
+to = "https://bartyspacelabs.tech/:splat"
 status = 302  
+
+[[redirects]]
+from = ":scheme://www.bartyspacelabs.tech/*"
+to = "https://bartyspacelabs.tech/:splat"
+status = 302
+
+[[redirects]]
+from = "https://bartyspacelabs.netlify.app/*"
+to = "https://bartyspacelabs.tech/:splat"
+status = 301
