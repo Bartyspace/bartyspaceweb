@@ -1,28 +1,4 @@
 
-[functions]
-
-[functions."*"]
-
-[build]
-publish = "./bartyspace" 
-publishOrigin = "default"
-command = "npm run build"
-commandOrigin = "heuristics"
-
-[build.environment]
-URL = "https://bartyspacelabs.tech"  
-
-[build.processing]
-
-[build.processing.css]
-
-[build.processing.html]
-
-[build.processing.images]
-
-[build.processing.js]
-
-[build.services]
 
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
