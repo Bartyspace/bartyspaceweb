@@ -1,7 +1,7 @@
 /*                                         https://bartyspacelabs.tech/404     404
-http://www.bartyspacelabs.tech/*           https://bartyspacelabs.tech/:splat  301
-https://www.bartyspacelabs.tech/*          https://bartyspacelabs.tech/:splat  301
-http://bartyspacelabs.netlify.app/*        https://bartyspacelabs.tech/:splat  301
-https://bartyspacelabs.netlify.app/*       https://bartyspacelabs.tech/:splat  301
-http://www.bartyspacelabs.netlify.app/*    https://bartyspacelabs.tech/:splat  301
-https://www.bartyspacelabs.netlify.app/*   https://bartyspacelabs.tech/:splat  301
+http://www.bartyspacelabs.tech             https://bartyspacelabs.tech  301
+https://www.bartyspacelabs.tech            https://bartyspacelabs.tech  301
+http://bartyspacelabs.netlify.app          https://bartyspacelabs.tech  301
+https://bartyspacelabs.netlify.app         https://bartyspacelabs.tech  301
+http://www.bartyspacelabs.netlify.app      https://bartyspacelabs.tech  301
+https://www.bartyspacelabs.netlify.app     https://bartyspacelabs.tech  301
