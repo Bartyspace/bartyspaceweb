@@ -1,7 +1,7 @@
-/404/*                                           https://bartyspacelabs.netlify.app/  404
-http://www.bartyspacelabs.netlify.app/*          https://bartyspacelabs.netlify.app/  301!
-https://www.bartyspacelabs.netlify.app/          https://bartyspacelabs.netlify.app/  301!
-http://bartyspacelabs.netlify.app/*              https://bartyspacelabs.netlify.app/  301!
-https://bartyspacelabs.netlify.app/*             https://bartyspacelabs.netlify.app/  301!
-http://www.bartyspacelabs.netlify.app/*          https://bartyspacelabs.netlify.app/  301!
-https://www.bartyspacelabs.netlify.app/*         https://bartyspacelabs.netlify.app/  301!
+# Přesměrování HTTP na HTTPS a www na non-www
+http://www.bartyspacelabs.netlify.app/*          https://bartyspacelabs.netlify.app/:splat  301!
+https://www.bartyspacelabs.netlify.app/*         https://bartyspacelabs.netlify.app/:splat  301!
+http://bartyspacelabs.netlify.app/*              https://bartyspacelabs.netlify.app/:splat  301!
+
+# 404 stránka
+/*                                               /404  404
