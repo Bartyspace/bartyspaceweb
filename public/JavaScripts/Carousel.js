@@ -1,166 +1,85 @@
-/**
- * Carousel Implementation
- * Podporuje desktop (kliknutí na položky) i mobile (navigační tlačítka)
- */
-
-class Carousel {
-  constructor() {
-    this.TOTAL_ITEMS = 5;
-    this.CENTER_POSITION = 3;
-    this.MOBILE_BREAKPOINT = 728;
-    this.currentPos = this.CENTER_POSITION;
-    
-    // Cache DOM elements
-    this.wrapper = document.querySelector('.carousel__wrapper');
-    this.items = null;
-    this.nextButton = document.querySelector('.carousel__button_next');
-    this.prevButton = document.querySelector('.carousel__button_prev');
-    
-    this.init();
+document.querySelector('.carousel__wrapper').addEventListener('click', function (event) {
+  const newActive = event.target.closest('.carousel__item');
+  if (!newActive || newActive.classList.contains('carousel__item_active')) {
+    return;
   }
 
-  // Detekce malé obrazovky s podporou resize
-  isSmallScreen() {
-    return window.innerWidth <= this.MOBILE_BREAKPOINT;
-  }
+  const elems = Array.from(document.querySelectorAll('.carousel__item'));
+  const newActivePos = Number(newActive.dataset.pos);
+  const current = elems.find(elem => Number(elem.dataset.pos) === 3);
 
-  // Cache DOM elements - voláme jen jednou
-  cacheItems() {
-    this.items = Array.from(document.querySelectorAll('.carousel__item'));
-  }
-
-  // Najde aktivní položku
-  findActiveItem() {
-    return this.items.find(item => Number(item.dataset.pos) === this.CENTER_POSITION);
-  }
-
-  // Najde položku na dané pozici
-  findItemByPosition(position) {
-    return this.items.find(item => Number(item.dataset.pos) === position);
-  }
-
-  // Desktop funkčnost - kliknutí na položky
-  handleDesktopClick(event) {
-    const newActive = event.target.closest('.carousel__item');
-    if (!newActive || newActive.classList.contains('carousel__item_active')) {
-      return;
+  current.classList.remove('carousel__item_active');
+  elems.forEach(item => {
+    const itemPos = Number(item.dataset.pos);
+    let diff = itemPos - newActivePos;
+    if (diff < 0) {
+      diff += 5;
     }
-
-    const newActivePos = Number(newActive.dataset.pos);
-    const current = this.findActiveItem();
-
-    if (current) {
-      current.classList.remove('carousel__item_active');
-    }
-
-    // Přepočítání pozic všech položek
-    this.items.forEach(item => {
-      const itemPos = Number(item.dataset.pos);
-      let diff = itemPos - newActivePos;
-      if (diff < 0) {
-        diff += this.TOTAL_ITEMS;
-      }
-      item.dataset.pos = ((diff + 2) % this.TOTAL_ITEMS) + 1;
-    });
-
-    newActive.classList.add('carousel__item_active');
-    newActive.dataset.pos = this.CENTER_POSITION;
-  }
-
-  // Mobile funkčnost - navigační tlačítka
-  updateCarousel(direction) {
-    if (!this.items) {
-      this.cacheItems();
-    }
-
-    // Odebere aktivní třídu ze všech položek
-    this.items.forEach(item => {
-      item.classList.remove('carousel__item_active');
-      const pos = Number(item.dataset.pos);
-      
-      // Aktualizuje pozici položky
-      if (direction === 'next') {
-        item.dataset.pos = pos === 1 ? this.TOTAL_ITEMS : pos - 1;
-      } else {
-        item.dataset.pos = pos === this.TOTAL_ITEMS ? 1 : pos + 1;
-      }
-    });
-
-    // Najde a označí novou aktivní položku
-    const activeItem = this.findItemByPosition(this.CENTER_POSITION);
-    if (activeItem) {
-      activeItem.classList.add('carousel__item_active');
-    }
-  }
-
-  // Inicializace aktivní položky
-  initializeActiveItem() {
-    const activeItem = this.findItemByPosition(this.CENTER_POSITION);
-    if (activeItem) {
-      activeItem.classList.add('carousel__item_active');
-    }
-  }
-
-  // Inicializace event listeners
-  initEventListeners() {
-    // Desktop: kliknutí na wrapper
-    if (this.wrapper) {
-      this.wrapper.addEventListener('click', (event) => {
-        if (!this.isSmallScreen()) {
-          this.handleDesktopClick(event);
-        }
-      });
-    }
-
-    // Mobile: navigační tlačítka
-    if (this.nextButton) {
-      this.nextButton.addEventListener('click', () => {
-        if (this.isSmallScreen()) {
-          this.updateCarousel('next');
-        }
-      });
-    }
-
-    if (this.prevButton) {
-      this.prevButton.addEventListener('click', () => {
-        if (this.isSmallScreen()) {
-          this.updateCarousel('prev');
-        }
-      });
-    }
-
-    // Poslouchá změny velikosti okna
-    window.addEventListener('resize', () => {
-      // Debounce resize events
-      clearTimeout(this.resizeTimeout);
-      this.resizeTimeout = setTimeout(() => {
-        this.handleResize();
-      }, 250);
-    });
-  }
-
-  // Zpracování změny velikosti okna
-  handleResize() {
-    // Znovu inicializuje aktivní položku při změně velikosti
-    this.initializeActiveItem();
-  }
-
-  // Hlavní inicializace
-  init() {
-    // Čeká na načtení DOM
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => {
-        this.cacheItems();
-        this.initializeActiveItem();
-        this.initEventListeners();
-      });
-    } else {
-      this.cacheItems();
-      this.initializeActiveItem();
-      this.initEventListeners();
-    }
-  }
+    item.dataset.pos = ((diff + 2) % 5) + 1;
+  });
+  newActive.classList.add('carousel__item_active');
+  newActive.dataset.pos = 3;
+});
+// Funkce pro detekci malé obrazovky
+function isSmallScreen() {
+  // Vrací true, pokud je šířka okna menší nebo rovna 728px
+  return window.innerWidth <= 728;
 }
 
-// Inicializace carousel po načtení stránky
-new Carousel();
+// Aktualizace karuselu pro malé obrazovky
+if (isSmallScreen()) {
+  // Aktuální pozice v karuselu
+  let currentPos = 3;
+
+  // Při načtení stránky najde položku karuselu na pozici 3 a označí ji jako aktivní
+  window.addEventListener('DOMContentLoaded', () => {
+    const carouselItems = Array.from(document.querySelectorAll('.carousel__item'));
+    carouselItems
+      .find(item => Number(item.dataset.pos) === 3)
+      ?.classList.add('carousel__item_active');
+  });
+
+  // Funkce pro aktualizaci karuselu
+  function updateCarousel(direction) {
+    // Získá všechny položky karuselu
+    const carouselItems = Array.from(document.querySelectorAll('.carousel__item'));
+
+    // Funkce pro aktualizaci pozice položky karuselu
+    const updatePosition = item => {
+      // Odebere třídu 'carousel__item_active' z položky
+      item.classList.remove('carousel__item_active');
+      // Získá aktuální pozici položky
+      const pos = Number(item.dataset.pos);
+      // Aktualizuje pozici položky na základě směru
+      item.dataset.pos =
+        direction === 'next' ? (pos === 1 ? 5 : pos - 1) : pos === 5 ? 1 : pos + 1;
+    };
+
+    // Pokud je směr definován, aktualizuje pozici všech položek karuselu
+    if (direction) {
+      carouselItems.forEach(updatePosition);
+    }
+
+    // Aktualizuje aktuální pozici na základě směru
+    currentPos =
+      direction === 'next'
+        ? currentPos === 5
+          ? 1
+          : currentPos
+        : currentPos === 1
+          ? 5
+          : currentPos;
+    // Najde položku karuselu na aktuální pozici a označí ji jako aktivní
+    carouselItems
+      .find(item => Number(item.dataset.pos) === currentPos)
+      ?.classList.add('carousel__item_active');
+  }
+
+  // Při kliknutí na tlačítko 'next' aktualizuje karusel
+  document
+    .querySelector('.carousel__button_next')
+    .addEventListener('click', () => updateCarousel('next'));
+  document
+    .querySelector('.carousel__button_prev')
+    .addEventListener('click', () => updateCarousel('prev'));
+}

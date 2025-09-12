@@ -6,7 +6,8 @@ import grid from '../assets/GridBackground.png';
 
 <section
   id="domu"
-  class="flex h-screen w-screen items-center justify-center bg-gradient-to-b from-sky-600 from-40% to-indigo-950">
+  style="background: linear-gradient(to bottom, #0369a1 40%, #1e1b4b 100%) !important;"
+  class="relative flex h-screen w-screen items-center justify-center">
   <div class="background-circle"></div>
   <div
     id="gridmove"
@@ -14,11 +15,10 @@ import grid from '../assets/GridBackground.png';
     <Image
       loading={'eager'}
       src={grid}
-      class="border-t-4 z-0 h-screen border-b-4 flex border-white border-opacity-20 w-screen object-cover 2xl:scale-x-125 xl:border-b-[5px] xl:border-t-[5px]"
+      class="border-t-4 z-5 h-screen border-b-4 flex border-white border-opacity-20 w-screen object-cover 2xl:scale-x-125 xl:border-b-[5px] xl:border-t-[5px] opacity-30 mix-blend-overlay"
       alt="Grid background"
     />
   </div>
-
   <Image
     loading={'eager'}
     src={favicon}

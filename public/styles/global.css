@@ -72,8 +72,9 @@ h1 {
   width: 100vw;
   height: 100vh;
   border-radius: 50%;
-  filter: blur(20px);
-  background: radial-gradient(
+  filter: blur(50px);
+  background: 
+    radial-gradient(
       at 50% 50%,
       rgba(2, 132, 199, 0.6) 0%,
       rgba(255, 255, 255, 0) 30%
