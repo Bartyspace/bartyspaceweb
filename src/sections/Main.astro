@@ -14,6 +14,7 @@ import grid from '../assets/GridBackground.png';
     class="absolute flex items-center justify-center">
     <Image
       loading={'eager'}
+      fetchpriority={'high'}
       src={grid}
       class="border-t-4 z-5 h-screen border-b-4 flex border-white border-opacity-20 w-screen object-cover 2xl:scale-x-125 xl:border-b-[5px] xl:border-t-[5px] opacity-30 mix-blend-overlay"
       alt="Grid background"
@@ -21,6 +22,7 @@ import grid from '../assets/GridBackground.png';
   </div>
   <Image
     loading={'eager'}
+    fetchpriority={'high'}
     src={favicon}
     class="z-20 max-sm:hidden flex absolute -left-64 -top-16 overflow-hidden"
     alt="Bartyspace wolf"

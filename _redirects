@@ -1,3 +1,9 @@
+# Přesměrování z vlastní domény na Netlify
+http://bartyspacelabs.tech/*                     https://bartyspacelabs.netlify.app/:splat  301!
+https://bartyspacelabs.tech/*                    https://bartyspacelabs.netlify.app/:splat  301!
+http://www.bartyspacelabs.tech/*                 https://bartyspacelabs.netlify.app/:splat  301!
+https://www.bartyspacelabs.tech/*                https://bartyspacelabs.netlify.app/:splat  301!
+
 # Přesměrování HTTP na HTTPS a www na non-www
 http://www.bartyspacelabs.netlify.app/*          https://bartyspacelabs.netlify.app/:splat  301!
 https://www.bartyspacelabs.netlify.app/*         https://bartyspacelabs.netlify.app/:splat  301!
