@@ -2,7 +2,6 @@
 import GoogleTag from '../components/GoogleAnalytics.astro';
 import siteConfig from '../config/site';
 import {SEO} from 'astro-seo';
-import {ViewTransitions} from 'astro:transitions';
 import {Head} from 'astro-capo';
 
 export interface Props {
@@ -70,13 +69,12 @@ const canonical = `${siteUrl}${pathname}`;
           {name: 'viewport', content: 'width=device-width'},
           {name: 'robots', content: 'index'},
           {name: 'generator', content: Astro.generator},
-          {name: 'msapplication-TileColor', content: '#da532c'},
-          {name: 'theme-color', content: 'ffffff'}
+          {name: 'msapplication-TileColor', content: '##1B1B3A'},
+          {name: 'theme-color', content: '1B1B3A'}
         ]
       }}
     />
     <GoogleTag />
-    <ViewTransitions />
     <script is:inline type="application/ld+json">
       {
         "@context": "https://schema.org",

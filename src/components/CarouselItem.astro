@@ -1,4 +1,6 @@
 ---
+import RoundedButton from './RoundedButton.astro';
+
 const {pos} = Astro.props;
 const {link} = Astro.props;
 const {buttonText} = Astro.props;
@@ -8,17 +10,9 @@ const {buttonText} = Astro.props;
   class="carousel__item flex-col rounded-xl border-2 p-4"
   data-pos={pos}>
   <slot />
-  <a
+  <RoundedButton
+    text={buttonText}
     href={link}
-    data-astro-reload>
-    <button
-      class="relative mt-4 overflow-hidden rounded-full border border-white hover:animate-jump">
-      <span class="mx-4 my-2 flex text-white">{buttonText}</span>
-      <span class="absolute inset-0 overflow-hidden">
-        <span
-          class="animate-shine absolute left-0 top-0 h-full w-full bg-gradient-to-t from-transparent via-white opacity-0">
-        </span>
-      </span>
-    </button>
-  </a>
+    className="mt-4 border border-white px-4 py-2 max-lg:flex lg:flex"
+  />
 </div>

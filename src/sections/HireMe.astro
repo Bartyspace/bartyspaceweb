@@ -1,3 +1,7 @@
+---
+import RoundedButton from '../components/RoundedButton.astro';
+---
+
 <section
   id="kontakt"
   class="bg-indigo-950 pb-20">
@@ -67,45 +71,10 @@
               required></textarea>
           </div>
           <div class="flex items-center justify-center pt-6">
-            <button
+            <RoundedButton
+              text="Poslat!"
               type="submit"
-              id="submit-btn"
-              class="relative flex transform-gpu overflow-hidden rounded-full border-2 px-6 pr-12 py-2 font-bold text-white transition-all duration-300 hover:animate-jump group">
-              <span class="relative z-10 transition-colors duration-300 group-[.success]:text-green-600 group-[.error]:text-red-600" id="btn-text">Poslat!</span>
-              
-              <!-- Bílé pozadí pro success stav -->
-              <span class="absolute inset-0 bg-white transition-all duration-300 scale-0 group-[.success]:scale-100 rounded-full"></span>
-              
-              <!-- Červené pozadí pro error stav -->
-              <span class="absolute inset-0 bg-red-100 transition-all duration-300 scale-0 group-[.error]:scale-100 rounded-full"></span>
-              
-              <!-- Fajfka pro success -->
-              <span class="absolute top-1/2 transform -translate-y-1/2 opacity-0 group-[.success]:opacity-100 transition-all duration-500 delay-200 ml-3" style="left: calc(100% - 24px);">
-                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-                </svg>
-              </span>
-              
-              <!-- Křížek pro error -->
-              <span class="absolute top-1/2 transform -translate-y-1/2 opacity-0 group-[.error]:opacity-100 transition-all duration-500 delay-200 ml-3" style="left: calc(100% - 24px);">
-                <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              </span>
-              
-              <!-- Loading spinner -->
-              <span class="absolute top-1/2 transform -translate-y-1/2 opacity-0 group-[.loading]:opacity-100 transition-all duration-300 ml-3" style="left: calc(100% - 24px);">
-                <svg class="w-5 h-5 text-white animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                  <path class="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-              </span>
-              
-              <span class="absolute inset-0 overflow-hidden rounded-full">
-                <span class="animate-shine to-transpatent absolute left-0 top-0 h-8 w-full bg-gradient-to-t from-transparent via-white opacity-0">
-                </span>
-              </span>
-            </button>
+            />
           </div>
         </form>
       </div>

@@ -20,6 +20,35 @@ document.querySelector('.carousel__wrapper').addEventListener('click', function 
   newActive.classList.add('carousel__item_active');
   newActive.dataset.pos = 3;
 });
+
+// Při načtení stránky nastaví jako aktivní první položku karuselu (component 1)
+window.addEventListener('DOMContentLoaded', () => {
+  const carouselItems = Array.from(document.querySelectorAll('.carousel__item'));
+  
+  // Najde položku s data-pos="1" (první component)
+  const firstItem = carouselItems.find(item => item.dataset.pos === '1');
+  
+  if (firstItem) {
+    // Odebere aktivní třídu ze všech položek
+    carouselItems.forEach(item => item.classList.remove('carousel__item_active'));
+    
+    // Označí první položku jako aktivní a přesune ji na pozici 3 (střed)
+    firstItem.classList.add('carousel__item_active');
+    const firstItemPos = Number(firstItem.dataset.pos);
+    
+    // Přepočítá pozice všech položek tak, aby první byla ve středu
+    carouselItems.forEach(item => {
+      const itemPos = Number(item.dataset.pos);
+      let diff = itemPos - firstItemPos;
+      if (diff < 0) {
+        diff += 5;
+      }
+      item.dataset.pos = ((diff + 2) % 5) + 1;
+    });
+    firstItem.dataset.pos = 3;
+  }
+});
+
 // Funkce pro detekci malé obrazovky
 function isSmallScreen() {
   // Vrací true, pokud je šířka okna menší nebo rovna 728px
@@ -30,14 +59,6 @@ function isSmallScreen() {
 if (isSmallScreen()) {
   // Aktuální pozice v karuselu
   let currentPos = 3;
-
-  // Při načtení stránky najde položku karuselu na pozici 3 a označí ji jako aktivní
-  window.addEventListener('DOMContentLoaded', () => {
-    const carouselItems = Array.from(document.querySelectorAll('.carousel__item'));
-    carouselItems
-      .find(item => Number(item.dataset.pos) === 3)
-      ?.classList.add('carousel__item_active');
-  });
 
   // Funkce pro aktualizaci karuselu
   function updateCarousel(direction) {

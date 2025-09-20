@@ -1,13 +1,58 @@
-<button
-  class="relative flex transform-gpu items-center justify-center overflow-hidden rounded-full border-2 px-4 py-1 font-bold text-white transition-transform hover:animate-jump max-lg:hidden md:flex lg:py-1.5 lg:text-lg">
-  <a
-    href="#kontakt"
-    data-astro-reload>
-    <span class="relative z-10">Napiš mi</span>
-  </a>
-  <span class="absolute inset-0 overflow-hidden">
-    <span
-      class="animate-shine to-transpatent absolute left-0 top-0 h-8 w-full bg-gradient-to-t from-transparent via-white opacity-0">
+---
+const {text = "Tlačítko", href = "#", type = "link", className = ""} = Astro.props;
+---
+
+{type === "submit" ? (
+  <button
+    type="submit"
+    id="submit-btn"
+    class={`relative flex items-center justify-center transform-gpu overflow-hidden rounded-full border-2 px-6 py-2 font-bold text-white transition-all duration-300 hover:animate-jump group ${className}`}>
+    <span class="relative z-10 transition-colors duration-300 group-[.success]:text-green-600 group-[.error]:text-red-600" id="btn-text">{text}</span>
+    
+    <!-- Bílé pozadí pro success stav -->
+    <span class="absolute inset-0 bg-white transition-all duration-300 scale-0 group-[.success]:scale-100 rounded-full"></span>
+    
+    <!-- Červené pozadí pro error stav -->
+    <span class="absolute inset-0 bg-red-100 transition-all duration-300 scale-0 group-[.error]:scale-100 rounded-full"></span>
+    
+    <!-- Loading ikona -->
+    <span class="ml-0 group-[.loading]:ml-2 opacity-0 group-[.loading]:opacity-100 transition-all duration-300 w-0 group-[.loading]:w-5 overflow-hidden">
+      <svg class="animate-spin h-4 w-4 text-white flex-shrink-0" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
     </span>
-  </span>
-</button>
+    
+    <!-- Success ikona -->
+    <span class="ml-0 group-[.success]:ml-2 opacity-0 group-[.success]:opacity-100 transition-all duration-500 delay-200 w-0 group-[.success]:w-5 overflow-hidden">
+      <svg class="h-4 w-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+      </svg>
+    </span>
+    
+    <!-- Error ikona -->
+    <span class="ml-0 group-[.error]:ml-2 opacity-0 group-[.error]:opacity-100 transition-all duration-500 delay-200 w-0 group-[.error]:w-5 overflow-hidden">
+      <svg class="h-4 w-4 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </span>
+    
+    <span class="absolute inset-0 overflow-hidden">
+      <span class="animate-shine to-transpatent absolute left-0 top-0 h-8 w-full bg-gradient-to-t from-transparent via-white opacity-0"></span>
+    </span>
+  </button>
+) : (
+  <button
+    class={`relative flex transform-gpu items-center justify-center overflow-hidden rounded-full border-2 border-white px-4 py-1 font-bold text-white transition-transform hover:animate-jump max-lg:hidden md:flex lg:py-1.5 lg:text-lg ${className}`}>
+    <a
+      href={href}
+      data-astro-reload>
+      <span class="relative z-10">{text}</span>
+    </a>
+    <span class="absolute inset-0 overflow-hidden">
+      <span
+        class="animate-shine to-transpatent absolute left-0 top-0 h-8 w-full bg-gradient-to-t from-transparent via-white opacity-0">
+      </span>
+    </span>
+  </button>
+)}

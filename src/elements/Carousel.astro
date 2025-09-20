@@ -2,9 +2,10 @@
 import CarouselItem from '../components/CarouselItem.astro';
 import Image from 'astro/components/Image.astro';
 import BartysScreen from '../assets/BartyspaceScreen.png';
+import HCDraci from '../assets/HCDraci.png';
 ---
 
-<div class="carousel pt-24 max-lg:pb-12">
+<div class="carousel ">
   <div
     class="carousel__wrapper 3xl:h-[700px] flex h-[200px] w-full justify-center md:h-[300px] lg:h-[250px] xl:h-[400px] 2xl:h-[460px]">
     <button
@@ -48,57 +49,57 @@ import BartysScreen from '../assets/BartyspaceScreen.png';
       </svg>
     </button>
     <CarouselItem
-      pos="1"
-      buttonText="1"
-      link="/">
-      <Image
-        src={BartysScreen}
-        alt="Screen from web Bartyspace Labs"
-        loading={'eager'}
-        class="w-full rounded-xl"
-      />
-    </CarouselItem>
-    <CarouselItem
-      pos="2"
-      buttonText="2"
-      link="/">
-      <Image
-        src={BartysScreen}
-        alt="Screen from web Bartyspace Labs"
-        loading={'eager'}
-        class="w-full rounded-xl"
-      />
-    </CarouselItem>
-    <CarouselItem
       pos="3"
-      buttonText="3"
+      buttonText="Bartyspace Labs"
       link="/">
       <Image
         src={BartysScreen}
         alt="Screen from web Bartyspace Labs"
-        loading={'eager'}
+        loading={'lazy'}
         class="w-full rounded-xl"
       />
     </CarouselItem>
     <CarouselItem
       pos="4"
-      buttonText="4"
-      link="/">
+      buttonText="HC Draci - Staré křečany"
+      link="https://hcdraci.netlify.app/">
       <Image
-        src={BartysScreen}
-        alt="Screen from web Bartyspace Labs"
-        loading={'eager'}
+        src={HCDraci}
+        alt="Screen from web HC Draci"
+        loading={'lazy'}
         class="w-full rounded-xl"
       />
     </CarouselItem>
     <CarouselItem
       pos="5"
+      buttonText="3"
+      link="/">
+      <Image
+        src={BartysScreen}
+        alt="Screen from web Bartyspace Labs"
+        loading={'lazy'}
+        class="w-full rounded-xl"
+      />
+    </CarouselItem>
+    <CarouselItem
+      pos="1"
+      buttonText="4"
+      link="/">
+      <Image
+        src={BartysScreen}
+        alt="Screen from web Bartyspace Labs"
+        loading={'lazy'}
+        class="w-full rounded-xl"
+      />
+    </CarouselItem>
+    <CarouselItem
+      pos="2"
       buttonText="5"
       link="/">
       <Image
         src={BartysScreen}
         alt="Screen from web Bartyspace Labs"
-        loading={'eager'}
+        loading={'lazy'}
         class="w-full rounded-xl"
       />
     </CarouselItem>
