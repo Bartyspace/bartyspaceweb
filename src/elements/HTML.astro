@@ -3,6 +3,7 @@ import GoogleTag from '../components/GoogleAnalytics.astro';
 import siteConfig from '../config/site';
 import {SEO} from 'astro-seo';
 import {Head} from 'astro-capo';
+import { ClientRouter } from "astro:transitions";
 
 export interface Props {
   title?: string | undefined;
@@ -74,6 +75,7 @@ const canonical = `${siteUrl}${pathname}`;
         ]
       }}
     />
+    <ClientRouter />
     <GoogleTag />
     <script is:inline type="application/ld+json">
       {

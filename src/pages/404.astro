@@ -1,6 +1,6 @@
 ---
 import {Head} from 'astro-capo';
-import {ViewTransitions} from 'astro:transitions';
+import { ClientRouter } from "astro:transitions";
 import {SEO} from 'astro-seo';
 import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import RoundedButton from '../components/RoundedButton.astro';
@@ -30,7 +30,7 @@ import RoundedButton from '../components/RoundedButton.astro';
         ]
       }}
     />
-    <ViewTransitions />
+    <ClientRouter />
     <GoogleAnalytics />
   </Head>
   <style is:global>
